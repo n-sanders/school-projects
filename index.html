@@ -4,40 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seven Sanders School Projects</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="dist/output.css">
 </head>
 <body>
-  <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Evie')">Evie</button>
-    <button class="tablinks" onclick="openTab(event, 'Noah')">Noah</button>
-    <button class="tablinks" onclick="openTab(event, 'Hannah')">Hannah</button>
-    <button class="tablinks" onclick="openTab(event, 'Judah')">Judah</button>
-    <button class="tablinks" onclick="openTab(event, 'Ezra')">Ezra</button>
+  <header>
+    <div class="p-4 m-4 bg-blue-500 text-white rounded-lg text-center">Welcome to the Sanders Homeschool Resource Center!</div>
+    <div class="theme-switch-wrapper justify-end">
+      <span>Dark Mode:&nbsp;</span>
+      <span class="p-4">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+      </span>
+    </div>
+  </header>
+  <div class="container mx-auto border border-gray-300 bg-gray-100">
+    <div class="flex">
+      <button class="flex-1 py-2 px-4 text-sm font-medium text-gray-900 bg-white border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 focus:z-10" onclick="openTab(event, 'Evie')">Evie</button>
+      <button class="flex-1 py-2 px-4 text-sm font-medium text-gray-900 bg-white border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 focus:z-10" onclick="openTab(event, 'Noah')">Noah</button>
+      <button class="flex-1 py-2 px-4 text-sm font-medium text-gray-900 bg-white border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 focus:z-10" onclick="openTab(event, 'Hannah')">Hannah</button>
+      <button class="flex-1 py-2 px-4 text-sm font-medium text-gray-900 bg-white border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 focus:z-10" onclick="openTab(event, 'Judah')">Judah</button>
+      <button class="flex-1 py-2 px-4 text-sm font-medium text-gray-900 bg-white border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 focus:z-10" onclick="openTab(event, 'Ezra')">Ezra</button>
+      
+    </div>
   </div>
 
-  <div id="Evie" class="tabcontent">
-    <h3>Evie's Projects</h3>
-    <!-- Add content for Evie here -->
+  <div id="Evie" class="container mx-auto tabcontent">
+    <h3>Evie's Assignments</h3>
+    <div id="evie-container" class="flex flex-row flex-wrap">
+    </div>
   </div>
 
-  <div id="Noah" class="tabcontent">
-    <h3>Noah's Projects</h3>
-    <!-- Add content for Noah here -->
+  <div id="Noah" class="container mx-auto tabcontent">
+    <h3>Noah's Assignments</h3>
+    <div id="noah-container" class="flex flex-row flex-wrap">
+    </div>
   </div>
 
-  <div id="Hannah" class="tabcontent">
-    <h3>Hannah's Projects</h3>
-    <!-- Add content for Hannah here -->
+  <div id="Hannah" class="container mx-auto tabcontent">
+    <h3>Hannah's Assignments</h3>
+    <div id="hannah-container" class="flex flex-row flex-wrap">
+    </div>
   </div>
 
-  <div id="Judah" class="tabcontent">
-    <h3>Judah's Projects</h3>
-    <!-- Add content for Judah here -->
+  <div id="Judah" class="container mx-auto tabcontent">
+    <h3>Judah's Assignments</h3>
+    <div id="judah-container" class="flex flex-row flex-wrap">
+    </div>
   </div>
 
-  <div id="Ezra" class="tabcontent">
-    <h3>Ezra's Projects</h3>
-    <!-- Add content for Ezra here -->
+  <div id="Ezra" class="container mx-auto tabcontent">
+    <h3>Ezra's Assignments</h3>
+    <div id="ezra-container" class="flex flex-row flex-wrap">
+    </div>
+  </div>
+
+  <div class="container mx-auto border border-gray-300">
+    <h3 class="p-4">Common Links:</h3>
+    <div id="links-container" class="flex flex-row flex-wrap">
+    </div>
   </div>
 
   <script src="js/script.js"></script>

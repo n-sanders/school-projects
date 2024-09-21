@@ -1,0 +1,188 @@
+{
+    "common":[
+        {
+            "name": "I read a book!",
+            "url": "https://forms.office.com/r/MhnJAHW0J6",
+            "icon": "https://static.vecteezy.com/system/resources/previews/008/359/436/non_2x/collection-colored-thin-icon-of-book-stack-learning-subject-book-graduated-hat-learning-and-education-concept-illustration-vector.jpg"
+        },
+        {
+            "name": "Math Games",
+            "url": "https://plus.arcademics.com/home",
+            "icon": "https://play-lh.googleusercontent.com/gLj3dOvkT_Ie9i0WWKyFx4hVeh4Agx6gRTtWcikz5tLLkCJzzT3k9nggBUkdx1-MhvEk"
+        },
+        {
+            "name": "Scratch Online",
+            "url": "https://scratch.mit.edu/",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/7/75/Scratch.logo.S.png"
+        },
+        {
+            "name": "Continents",
+            "url": "https://www.geoguessr.com/vgp/3004",
+            "icon": "https://cdn.theconversation.com/files/162016/width754/image-20170322-31176-2q8pz6.jpg"
+        },
+        {
+            "name": "Continents and Oceans",
+            "url": "https://www.geoguessr.com/vgp/3188",
+            "icon": "https://cdn.theconversation.com/files/162016/width754/image-20170322-31176-2q8pz6.jpg"
+        },
+        {
+            "name": "Solar System",
+            "url": "https://www.geoguessr.com/vgp/3123",
+            "icon": "https://static.scientificamerican.com/dam/m/128e9a2bf8a1939/original/DM0HT8_WEB.jpg?w=1200"
+        }
+    ],
+
+    "evie":[
+        {
+            "name": "50 States",
+            "url": "https://www.geoguessr.com/vgp/3003",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "50 States Outlines",
+            "url": "https://www.geoguessr.com/vgp/3263",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "US State Capitals",
+            "url": "https://www.geoguessr.com/vgp/3063",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "Canadian Provinces",
+            "url": "https://www.geoguessr.com/vgp/3006",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/640px-Flag_of_Canada_%28Pantone%29.svg.png"
+        },
+        {
+            "name": "Australia",
+            "url": "https://www.geoguessr.com/vgp/3060",
+            "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZttcrcgYE4dVqR0xnRhlgAjYAPC7ShcUQn4bMZ7J1M4HniMAnYIbkklOJ-FFDseFUoJs&usqp=CAU"
+        },
+        {
+            "name": "Great Lakes",
+            "url": "https://www.geoguessr.com/vgp/3367",
+            "icon": "https://www.c2st.org/wp-content/uploads/2010/10/Colour-Great-Lakes-for-Site-Web.jpg"
+        },
+        {
+            "name": "Major US Cities",
+            "url": "https://www.geoguessr.com/vgp/3095",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "US Landmarks",
+            "url": "https://www.geoguessr.com/vgp/3400",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "NA Physical Features",
+            "url": "https://www.geoguessr.com/vgp/3452",
+            "icon": "https://cdn.pixabay.com/photo/2014/03/24/17/08/map-295118_1280.png"
+        },
+        {
+            "name": "Growth of USA",
+            "url": "https://www.geoguessr.com/vgp/3362",
+            "icon": "https://www.carolana.com/SC/Maps/Images/1803EN_US.jpg"
+        },
+        {
+            "name": "G20 Nations",
+            "url": "https://www.geoguessr.com/vgp/3220",
+            "icon": "https://www.orfonline.org/public/uploads/posts/image/G20.jpg"
+        }
+    ],
+
+    "noah":[
+        {
+            "name": "Midwest States",
+            "url": "https://www.geoguessr.com/vgp/3138",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "13 Original Colonies",
+            "url": "https://www.geoguessr.com/vgp/3044",
+            "icon": "https://flymeflag.com/cdn/shop/products/Betsy-Ross-Flags-Flag_3bba4777-65a7-429a-a7e3-cb48fc4ce990.jpg?v=1658823236"
+        },
+        {
+            "name": "Great Lakes",
+            "url": "https://www.geoguessr.com/vgp/3367",
+            "icon": "https://www.c2st.org/wp-content/uploads/2010/10/Colour-Great-Lakes-for-Site-Web.jpg"
+        },
+        {
+            "name": "Founding Fathers",
+            "url": "https://www.geoguessr.com/fl/2091",
+            "icon": "https://flymeflag.com/cdn/shop/products/Betsy-Ross-Flags-Flag_3bba4777-65a7-429a-a7e3-cb48fc4ce990.jpg?v=1658823236"
+        },
+        {
+            "name": "Southern States",
+            "url": "https://www.geoguessr.com/vgp/3139",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "Northeastern States",
+            "url": "https://www.geoguessr.com/vgp/3140",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "Great Plains States",
+            "url": "https://www.geoguessr.com/vgp/3259",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "Western States",
+            "url": "https://www.geoguessr.com/vgp/3141",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "US Landmarks",
+            "url": "https://www.geoguessr.com/vgp/3400",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        }
+    ],
+
+    "hannah":[
+        {
+            "name": "Midwest States",
+            "url": "https://www.geoguessr.com/vgp/3138",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "13 Original Colonies",
+            "url": "https://www.geoguessr.com/vgp/3044",
+            "icon": "https://flymeflag.com/cdn/shop/products/Betsy-Ross-Flags-Flag_3bba4777-65a7-429a-a7e3-cb48fc4ce990.jpg?v=1658823236"
+        },
+        {
+            "name": "Great Lakes",
+            "url": "https://www.geoguessr.com/vgp/3367",
+            "icon": "https://www.c2st.org/wp-content/uploads/2010/10/Colour-Great-Lakes-for-Site-Web.jpg"
+        },
+        {
+            "name": "Founding Fathers",
+            "url": "https://www.geoguessr.com/fl/2091",
+            "icon": "https://flymeflag.com/cdn/shop/products/Betsy-Ross-Flags-Flag_3bba4777-65a7-429a-a7e3-cb48fc4ce990.jpg?v=1658823236"
+        },
+        {
+            "name": "Southern States",
+            "url": "https://www.geoguessr.com/vgp/3139",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "Northeastern States",
+            "url": "https://www.geoguessr.com/vgp/3140",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "Great Plains States",
+            "url": "https://www.geoguessr.com/vgp/3259",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "Western States",
+            "url": "https://www.geoguessr.com/vgp/3141",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "US Landmarks",
+            "url": "https://www.geoguessr.com/vgp/3400",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        }
+    ]
+}

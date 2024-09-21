@@ -1,5 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .tab {
@@ -32,6 +39,93 @@ body {
   border: 1px solid #ccc;
   border-top: none;
   animation: fadeEffect 1s;
+}
+
+.sharedtabcontent {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  animation: fadeEffect 1s;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+/* Theme switch styles */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Example of tab styles for dark mode */
+.tab.dark-mode button {
+  background-color: #444;
+  color: white;
+}
+
+.tab.dark-mode button:hover {
+  background-color: #555;
+}
+
+.tab.dark-mode button.active {
+  background-color: #666;
+}
+
+.tabcontent.dark-mode {
+  background-color: #333;
 }
 
 @keyframes fadeEffect {
