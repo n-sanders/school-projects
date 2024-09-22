@@ -92,6 +92,11 @@
 
     "noah":[
         {
+            "name": "Choir Songs",
+            "url": "https://www.raachechoirs.org/con-brio-part-2-songs",
+            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
+        },
+        {
             "name": "Midwest States",
             "url": "https://www.geoguessr.com/vgp/3138",
             "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
@@ -139,6 +144,11 @@
     ],
 
     "hannah":[
+        {
+            "name": "Choir Songs",
+            "url": "https://www.raachechoirs.org/con-brio-songs-part-1",
+            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
+        },
         {
             "name": "Midwest States",
             "url": "https://www.geoguessr.com/vgp/3138",
