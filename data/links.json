@@ -122,6 +122,11 @@
 
     "noah":[
         {
+            "name": "Typing",
+            "url": "https://thesevensanders.typingclub.com/",
+            "icon": "https://typingmentor.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbs3wcomf%2Fproduction%2F486ca37cbb98245dddd1080e8fb02c133d035921-732x486.jpg%3Frect%3D0%2C2%2C732%2C483%26w%3D808%26h%3D533%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+        },
+        {
             "name": "Choir Songs",
             "url": "https://www.raachechoirs.org/con-brio-part-2-songs",
             "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
@@ -179,6 +184,11 @@
     ],
 
     "hannah":[
+        {
+            "name": "Typing",
+            "url": "https://thesevensanders.typingclub.com/",
+            "icon": "https://typingmentor.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbs3wcomf%2Fproduction%2F486ca37cbb98245dddd1080e8fb02c133d035921-732x486.jpg%3Frect%3D0%2C2%2C732%2C483%26w%3D808%26h%3D533%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+        },
         {
             "name": "Choir Songs",
             "url": "https://www.raachechoirs.org/con-brio-songs-part-1",
