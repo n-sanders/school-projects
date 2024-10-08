@@ -239,5 +239,13 @@
             "url": "https://www.geoguessr.com/vgp/3400",
             "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
         }
+    ],
+
+    "judah":[
+        {
+            "name": "Typing",
+            "url": "https://thesevensanders.typingclub.com/",
+            "icon": "https://typingmentor.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbs3wcomf%2Fproduction%2F486ca37cbb98245dddd1080e8fb02c133d035921-732x486.jpg%3Frect%3D0%2C2%2C732%2C483%26w%3D808%26h%3D533%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+        }
     ]
 }
