@@ -246,6 +246,38 @@
             "name": "Typing",
             "url": "https://thesevensanders.typingclub.com/",
             "icon": "https://typingmentor.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbs3wcomf%2Fproduction%2F486ca37cbb98245dddd1080e8fb02c133d035921-732x486.jpg%3Frect%3D0%2C2%2C732%2C483%26w%3D808%26h%3D533%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+        },
+        {
+            "name": "Bible Verse",
+            "url": "https://thesevensanders.typingclub.com/",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2600/2600768.png"
+        },
+        {
+            "name": "Lord Make My Life a Little Light choir song",
+            "url": "https://1drv.ms/u/s!Aopbjbnz-tWJhptaJbw0pt-GRK9lVA?e=dfJFMz",
+            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
+        },
+        {
+            "name": "Give Thanks choir song",
+            "url": "https://1drv.ms/u/s!Aopbjbnz-tWJhptZtxJwvctV1eTDGg?e=RjvsbQ",
+            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
+        }
+    ],
+    "ezra":[
+        {
+            "name": "Bible Verse",
+            "url": "https://thesevensanders.typingclub.com/",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2600/2600768.png"
+        },
+        {
+            "name": "Lord Make My Life a Little Light choir song",
+            "url": "https://1drv.ms/u/s!Aopbjbnz-tWJhptaJbw0pt-GRK9lVA?e=dfJFMz",
+            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
+        },
+        {
+            "name": "Give Thanks choir song",
+            "url": "https://1drv.ms/u/s!Aopbjbnz-tWJhptZtxJwvctV1eTDGg?e=RjvsbQ",
+            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
         }
     ]
 }
