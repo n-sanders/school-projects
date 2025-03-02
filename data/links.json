@@ -1,6 +1,11 @@
 {
     "common":[
         {
+            "name": "Flux and Fizzle: Chase the Chaos",
+            "url": "https://flux-and-fizzle.vercel.app/",
+            "icon": "https://flux-and-fizzle.vercel.app/images/fizzle.jpg"
+        },
+        {
             "name": "I read a book!",
             "url": "https://forms.office.com/r/MhnJAHW0J6",
             "icon": "https://static.vecteezy.com/system/resources/previews/008/359/436/non_2x/collection-colored-thin-icon-of-book-stack-learning-subject-book-graduated-hat-learning-and-education-concept-illustration-vector.jpg"
