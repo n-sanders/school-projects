@@ -1,6 +1,11 @@
 {
     "common":[
         {
+            "name": "Event Sequencing",
+            "url": "https://card-ordering-n-sanders-projects.vercel.app/",
+            "icon": "https://card-ordering-n-sanders-projects.vercel.app/assets/basic/Quad.jpg"
+        },
+        {
             "name": "Flux and Fizzle: Chase the Chaos",
             "url": "https://flux-and-fizzle.vercel.app/",
             "icon": "https://flux-and-fizzle.vercel.app/images/fizzle.jpg"
