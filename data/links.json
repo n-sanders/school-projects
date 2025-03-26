@@ -1,6 +1,11 @@
 {
     "common":[
         {
+            "name": "Chat LLM",
+            "url": "https://chat-llm-sigma.vercel.app",
+            "icon": "https://pbs.twimg.com/profile_images/1893219113717342208/Vgg2hEPa_400x400.jpg"
+        },
+        {
             "name": "Event Sequencing",
             "url": "https://card-ordering-n-sanders-projects.vercel.app/",
             "icon": "https://card-ordering-n-sanders-projects.vercel.app/assets/basic/Quad.jpg"
