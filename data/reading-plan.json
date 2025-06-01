@@ -1,0 +1,165 @@
+{
+    "reading_plan": [
+      {
+        "day": 1,
+        "readings": [
+          {
+            "type": "Short Story",
+            "title": "The Chaser",
+            "link": "pdfs/the_chaser.pdf",
+            "description": "A witty, dark tale by John Collier about a young man seeking a love potion, exploring the complexities of desire."
+          },
+          {
+            "type": "Poem",
+            "title": "Sonnet 18",
+            "link": "pdfs/the-sonnets-018-sonnet-18.pdf",
+            "description": "A timeless sonnet by William Shakespeare celebrating love and poetry’s enduring power."
+          },
+          {
+            "type": "Essay",
+            "title": "Notes of a Native Son",
+            "link": "pdfs/Notes-of-a-Native-Son-Baldwin.pdf",
+            "description": "A powerful reflection by James Baldwin on race, family, and identity in America."
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "readings": [
+          {
+            "type": "Short Story",
+            "title": "A Worn Path",
+            "link": "pdfs/a_worn_path_by_eudora_welty.pdf",
+            "description": "A moving story by Eudora Welty of an elderly woman’s journey, rich in symbolism and resilience."
+          },
+          {
+            "type": "Poem",
+            "title": "The Road Not Taken",
+            "link": "pdfs/The-Road-Not-Taken.pdf",
+            "description": "A meditation by Robert Frost on life’s choices and their lasting impact."
+          },
+          {
+            "type": "Essay",
+            "title": "Notes on Camp",
+            "link": "pdfs/Sontag_Susan_1964_Notes_on_Camp.pdf",
+            "description": "An exploration by Susan Sontag of the aesthetics of 'camp' in art and culture."
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "readings": [
+          {
+            "type": "Short Story",
+            "title": "The Swimmer",
+            "link": "pdfs/Cheever_Swimmer.pdf",
+            "description": "A surreal narrative by John Cheever of a man swimming through suburban pools, symbolizing loss and time."
+          },
+          {
+            "type": "Poem",
+            "title": "Ozymandias",
+            "link": "pdfs/ENGL404-Shelley-Ozymandias-of-Egypt.pdf",
+            "description": "A sonnet by Percy Bysshe Shelley on the fleeting nature of power and human achievement."
+          },
+          {
+            "type": "Essay",
+            "title": "The Search for Marvin Gardens",
+            "link": "pdfs/the-search-for-marvin-gardens.pdf",
+            "description": "A blend of history and narrative by John McPhee about the origins of Monopoly."
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "readings": [
+          {
+            "type": "Short Story",
+            "title": "Tell-Tale Heart",
+            "link": "pdfs/Tell-Tale_Heart.pdf",
+            "description": "A chilling psychological tale by Edgar Allan Poe of guilt and madness."
+          },
+          {
+            "type": "Poem",
+            "title": "The Tyger",
+            "link": "pdfs/tyger.pdf",
+            "description": "A vivid exploration by William Blake of creation and divine mystery."
+          },
+          {
+            "type": "Essay",
+            "title": "Total Eclipse",
+            "link": "pdfs/dillard_eclipse.pdf",
+            "description": "A philosophical account by Annie Dillard of witnessing a solar eclipse."
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "readings": [
+          {
+            "type": "Short Story",
+            "title": "Hills Like White Elephants",
+            "link": "pdfs/May-Short-Stories.pdf",
+            "description": "A minimalist story by Ernest Hemingway about a couple’s tense conversation."
+          },
+          {
+            "type": "Poem",
+            "title": "Do Not Go Gentle into That Good Night",
+            "link": "pdfs/coleman_poem_do_not_go_gentle_into_t.pdf",
+            "description": "A passionate villanelle by Dylan Thomas urging resistance against death."
+          },
+          {
+            "type": "Essay",
+            "title": "Against Joie de Vivre",
+            "link": "pdfs/AgainstJoieDeVivre.pdf",
+            "description": "A humorous reflection by Phillip Lopate on the pursuit of happiness."
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "readings": [
+          {
+            "type": "Short Story",
+            "title": "The Lottery",
+            "link": "pdfs/jackson_Lottery.pdf",
+            "description": "A shocking critique by Shirley Jackson of tradition and human nature."
+          },
+          {
+            "type": "Poem",
+            "title": "Because I Could Not Stop for Death",
+            "link": "pdfs/Because-I-Could-Not-Stop-for-Death.pdf",
+            "description": "A serene meditation by Emily Dickinson on mortality."
+          },
+          {
+            "type": "Essay",
+            "title": "The Fourth State of Matter",
+            "link": "pdfs/The-Fourth-State-of-Matter-The-New-Y.pdf",
+            "description": "A poignant narrative by Jo Ann Beard blending personal tragedy and science."
+          }
+        ]
+      },
+      {
+        "day": 7,
+        "readings": [
+          {
+            "type": "Short Story",
+            "title": "The Mark of the Beast",
+            "link": "pdfs/TheMarkOfTheBeastRudyardKipling.pdf",
+            "description": "A tale by Rudyard Kipling of a British man cursed after defiling a temple in India, exploring superstition and colonial arrogance."
+          },
+          {
+            "type": "Poem",
+            "title": "Invictus",
+            "link": "pdfs/Invictus-William-Ernest-Henley.pdf",
+            "description": "An inspiring poem by William Ernest Henley about resilience and inner strength."
+          },
+          {
+            "type": "Essay",
+            "title": "Consider the Lobster",
+            "link": "pdfs/Consider-the-Lobster-Wallace.pdf",
+            "description": "A thought-provoking piece by David Foster Wallace on ethics and food culture."
+          }
+        ]
+      }
+    ]
+  }
