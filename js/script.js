@@ -52,11 +52,11 @@ window.onload = function() {
   const slider = document.getElementById('daySlider');
   // Initialize noUiSlider with default styling
   noUiSlider.create(slider, {
-    start: [1, 14],
+    start: [8, 14],
     connect: true,
     range: {
       'min': 1,
-      'max': 7
+      'max': 14
     },
     step: 1,
     tooltips: [true, true],

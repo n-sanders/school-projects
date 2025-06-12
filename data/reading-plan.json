@@ -1,326 +1,368 @@
 {
-    "reading_plan": [
-      {
-        "day": 1,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "The Chaser",
-            "link": "pdfs/the_chaser.pdf",
-            "description": "A witty, dark tale by John Collier about a young man seeking a love potion, exploring the complexities of desire."
-          },
-          {
-            "type": "Poem",
-            "title": "Sonnet 18",
-            "link": "pdfs/the-sonnets-018-sonnet-18.pdf",
-            "description": "A timeless sonnet by William Shakespeare celebrating love and poetry’s enduring power."
-          },
-          {
-            "type": "Essay",
-            "title": "Notes of a Native Son",
-            "link": "pdfs/Notes-of-a-Native-Son-Baldwin.pdf",
-            "description": "A powerful reflection by James Baldwin on race, family, and identity in America."
-          }
-        ]
-      },
-      {
-        "day": 2,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "A Worn Path",
-            "link": "pdfs/a_worn_path_by_eudora_welty.pdf",
-            "description": "A moving story by Eudora Welty of an elderly woman’s journey, rich in symbolism and resilience."
-          },
-          {
-            "type": "Poem",
-            "title": "The Road Not Taken",
-            "link": "pdfs/The-Road-Not-Taken.pdf",
-            "description": "A meditation by Robert Frost on life’s choices and their lasting impact."
-          },
-          {
-            "type": "Essay",
-            "title": "Notes on Camp",
-            "link": "pdfs/Sontag_Susan_1964_Notes_on_Camp.pdf",
-            "description": "An exploration by Susan Sontag of the aesthetics of 'camp' in art and culture."
-          }
-        ]
-      },
-      {
-        "day": 3,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "The Swimmer",
-            "link": "pdfs/Cheever_Swimmer.pdf",
-            "description": "A surreal narrative by John Cheever of a man swimming through suburban pools, symbolizing loss and time."
-          },
-          {
-            "type": "Poem",
-            "title": "Ozymandias",
-            "link": "pdfs/ENGL404-Shelley-Ozymandias-of-Egypt.pdf",
-            "description": "A sonnet by Percy Bysshe Shelley on the fleeting nature of power and human achievement."
-          },
-          {
-            "type": "Essay",
-            "title": "The Search for Marvin Gardens",
-            "link": "pdfs/the-search-for-marvin-gardens.pdf",
-            "description": "A blend of history and narrative by John McPhee about the origins of Monopoly."
-          }
-        ]
-      },
-      {
-        "day": 4,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "Tell-Tale Heart",
-            "link": "pdfs/Tell-Tale_Heart.pdf",
-            "description": "A chilling psychological tale by Edgar Allan Poe of guilt and madness."
-          },
-          {
-            "type": "Poem",
-            "title": "The Tyger",
-            "link": "pdfs/tyger.pdf",
-            "description": "A vivid exploration by William Blake of creation and divine mystery."
-          },
-          {
-            "type": "Essay",
-            "title": "Total Eclipse",
-            "link": "pdfs/dillard_eclipse.pdf",
-            "description": "A philosophical account by Annie Dillard of witnessing a solar eclipse."
-          }
-        ]
-      },
-      {
-        "day": 5,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "Hills Like White Elephants",
-            "link": "pdfs/May-Short-Stories.pdf",
-            "description": "A minimalist story by Ernest Hemingway about a couple’s tense conversation."
-          },
-          {
-            "type": "Poem",
-            "title": "Do Not Go Gentle into That Good Night",
-            "link": "pdfs/coleman_poem_do_not_go_gentle_into_that_good_night.pdf",
-            "description": "A passionate villanelle by Dylan Thomas urging resistance against death."
-          },
-          {
-            "type": "Essay",
-            "title": "Against Joie de Vivre",
-            "link": "pdfs/AgainstJoiedeVivre.pdf",
-            "description": "A humorous reflection by Phillip Lopate on the pursuit of happiness."
-          }
-        ]
-      },
-      {
-        "day": 6,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "The Lottery",
-            "link": "pdfs/jackson_Lottery.pdf",
-            "description": "A shocking critique by Shirley Jackson of tradition and human nature."
-          },
-          {
-            "type": "Poem",
-            "title": "Because I Could Not Stop for Death",
-            "link": "pdfs/Because-I-Could-Not-Stop-for-Death.pdf",
-            "description": "A serene meditation by Emily Dickinson on mortality."
-          },
-          {
-            "type": "Essay",
-            "title": "The Fourth State of Matter",
-            "link": "pdfs/The-Fourth-State-of-Matter-The-New-Y.pdf",
-            "description": "A poignant narrative by Jo Ann Beard blending personal tragedy and science."
-          }
-        ]
-      },
-      {
-        "day": 7,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "The Mark of the Beast",
-            "link": "pdfs/TheMarkOfTheBeastRudyardKipling.pdf",
-            "description": "A tale by Rudyard Kipling of a British man cursed after defiling a temple in India, exploring superstition and colonial arrogance."
-          },
-          {
-            "type": "Poem",
-            "title": "Invictus",
-            "link": "pdfs/Invictus-William-Ernest-Henley.pdf",
-            "description": "An inspiring poem by William Ernest Henley about resilience and inner strength."
-          },
-          {
-            "type": "Essay",
-            "title": "Consider the Lobster",
-            "link": "pdfs/Consider-the-Lobster-Wallace.pdf",
-            "description": "A thought-provoking piece by David Foster Wallace on ethics and food culture."
-          }
-        ]
-      },
-      {
-        "day": 8,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "The Cage",
-            "link": "pdfs/the_cage.pdf",
-            "description": "A 1957 sci-fi tale by A. Bertram Chandler about a human captured by aliens, exploring freedom and perspective with Bradbury’s speculative intensity."
-          },
-          {
-            "type": "Poem",
-            "title": "If—",
-            "link": "pdfs/if_kipling.pdf",
-            "description": "A concise, rhythmic poem by Rudyard Kipling on resilience and virtue, offering timeless wisdom in a brief read."
-          },
-          {
-            "type": "Essay",
-            "title": "The Depressed Person",
-            "link": "pdfs/the_depressed_person.pdf",
-            "description": "A raw, introspective essay by David Foster Wallace on depression, blending humor and pathos in a compact, poignant narrative."
-          }
-        ]
-      },
-      {
-        "day": 9,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "A Good Man Is Hard to Find",
-            "link": "pdfs/a_good_man_is_hard_to_find.pdf",
-            "description": "A dark, morally complex story by Flannery O’Connor about a family’s encounter with a criminal, echoing Bradbury’s moral inquiries."
-          },
-          {
-            "type": "Poem",
-            "title": "Still I Rise",
-            "link": "pdfs/still_i_rise.pdf",
-            "description": "An uplifting poem by Maya Angelou celebrating triumph over adversity, with lyrical power in a brief format."
-          },
-          {
-            "type": "Essay",
-            "title": "All Animals Are Equal",
-            "link": "pdfs/all_animals_are_equal.pdf",
-            "description": "A provocative excerpt from Peter Singer’s 1974 essay arguing for animal rights, with clear reasoning in a concise form."
-          }
-        ]
-      },
-      {
-        "day": 10,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "An Occurrence at Owl Creek Bridge",
-            "link": "pdfs/an_occurrence_at_owl_creek_bridge.pdf",
-            "description": "A surreal Civil War story by Ambrose Bierce with a shocking twist, blending vivid imagery and Bradbury’s speculative flair."
-          },
-          {
-            "type": "Poem",
-            "title": "Fire and Ice",
-            "link": "pdfs/fire_and_ice.pdf",
-            "description": "A compact, potent poem by Robert Frost exploring destruction and desire, resonant in its brevity."
-          },
-          {
-            "type": "Essay",
-            "title": "On Seeing England for the First Time",
-            "link": "pdfs/on_seeing_england.pdf",
-            "description": "A sharp, personal essay by Jamaica Kincaid critiquing colonialism’s impact, delivered in vivid, concise prose."
-          }
-        ]
-      },
-      {
-        "day": 11,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "The Garden Party",
-            "link": "pdfs/the_garden_party.pdf",
-            "description": "A lyrical story by Katherine Mansfield about class and mortality, with a reflective tone mirroring Bradbury’s emotional depth."
-          },
-          {
-            "type": "Poem",
-            "title": "This Is Just to Say",
-            "link": "pdfs/this_is_just_to_say.pdf",
-            "description": "A playful, deceptively simple poem by William Carlos Williams about plums and apology, rich in subtext."
-          },
-          {
-            "type": "Essay",
-            "title": "Learning to Write",
-            "link": "pdfs/learning_to_write.pdf",
-            "description": "A brief, engaging essay by Barbara Kingsolver on the craft of writing, with a warm, accessible voice."
-          }
-        ]
-      },
-      {
-        "day": 12,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "The Dead",
-            "link": "pdfs/the_dead.pdf",
-            "description": "A poignant tale from James Joyce’s Dubliners about love and epiphany, with a Bradbury-like emotional resonance."
-          },
-          {
-            "type": "Poem",
-            "title": "Hope is the thing with feathers",
-            "link": "pdfs/hope_is_the_thing.pdf",
-            "description": "A vivid, brief poem by Emily Dickinson personifying hope as a bird, uplifting and concise."
-          },
-          {
-            "type": "Essay",
-            "title": "Slouching Towards Bethlehem",
-            "link": "pdfs/slouching_towards_bethlehem.pdf",
-            "description": "A concise excerpt from Joan Didion’s iconic essay on 1960s counterculture, blending sharp observation and haunting tone."
-          }
-        ]
-      },
-      {
-        "day": 13,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "Nightfall",
-            "link": "pdfs/nightfall.pdf",
-            "description": "A landmark 1941 sci-fi story by Isaac Asimov about a planet facing darkness, exploring societal collapse with Bradbury’s speculative intensity."
-          },
-          {
-            "type": "Poem",
-            "title": "A Dream Deferred",
-            "link": "pdfs/a_dream_deferred.pdf",
-            "description": "A brief, powerful poem by Langston Hughes questioning the fate of postponed dreams, with vivid imagery."
-          },
-          {
-            "type": "Essay",
-            "title": "The White Album",
-            "link": "pdfs/the_white_album.pdf",
-            "description": "A short excerpt from Joan Didion’s reflective essay on the 1960s, blending personal and cultural insights."
-          }
-        ]
-      },
-      {
-        "day": 14,
-        "readings": [
-          {
-            "type": "Short Story",
-            "title": "The Open Window",
-            "link": "pdfs/the_open_window.pdf",
-            "description": "A witty, ironic story by Saki with a clever twist, aligning with Bradbury’s playful narrative style."
-          },
-          {
-            "type": "Poem",
-            "title": "Stopping by Woods on a Snowy Evening",
-            "link": "pdfs/stopping_by_woods.pdf",
-            "description": "A serene poem by Robert Frost about pause and duty, concise yet deeply evocative."
-          },
-          {
-            "type": "Essay",
-            "title": "A Modest Proposal",
-            "link": "pdfs/a_modest_proposal.pdf",
-            "description": "A biting satirical essay by Jonathan Swift proposing an outrageous solution to poverty, with sharp, concise prose."
-          }
-        ]
-      }
-    ]
-  }
+  "reading_plan": [
+    {
+      "day": 1,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Chaser",
+          "link": "pdfs/the_chaser.pdf",
+          "description": "A witty, dark tale by John Collier about a young man seeking a love potion, exploring the complexities of desire, published in 1940.",
+          "date": 1940
+        },
+        {
+          "type": "Poem",
+          "title": "Sonnet 18",
+          "link": "pdfs/the-sonnets-018-sonnet-18.pdf",
+          "description": "A timeless sonnet by William Shakespeare celebrating love and poetry’s enduring power, written in 1609.",
+          "date": 1609
+        },
+        {
+          "type": "Essay",
+          "title": "Notes of a Native Son",
+          "link": "pdfs/Notes-of-a-Native-Son-Baldwin.pdf",
+          "description": "A powerful reflection by James Baldwin on race, family, and identity in America, published in 1955.",
+          "date": 1955
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "A Worn Path",
+          "link": "pdfs/a_worn_path_by_eudora_welty.pdf",
+          "description": "A moving story by Eudora Welty of an elderly woman’s journey, rich in symbolism and resilience, published in 1941.",
+          "date": 1941
+        },
+        {
+          "type": "Poem",
+          "title": "The Road Not Taken",
+          "link": "pdfs/The-Road-Not-Taken.pdf",
+          "description": "A meditation by Robert Frost on life’s choices and their lasting impact, published in 1916.",
+          "date": 1916
+        },
+        {
+          "type": "Essay",
+          "title": "Notes on Camp",
+          "link": "pdfs/Sontag_Susan_1964_Notes_on_Camp.pdf",
+          "description": "An exploration by Susan Sontag of the aesthetics of 'camp' in art and culture, published in 1964.",
+          "date": 1964
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Swimmer",
+          "link": "pdfs/Cheever_Swimmer.pdf",
+          "description": "A surreal narrative by John Cheever of a man swimming through suburban pools, symbolizing loss and time, published in 1964.",
+          "date": 1964
+        },
+        {
+          "type": "Poem",
+          "title": "Ozymandias",
+          "link": "pdfs/ENGL404-Shelley-Ozymandias-of-Egypt.pdf",
+          "description": "A sonnet by Percy Bysshe Shelley on the fleeting nature of power and human achievement, published in 1818.",
+          "date": 1818
+        },
+        {
+          "type": "Essay",
+          "title": "The Search for Marvin Gardens",
+          "link": "pdfs/the-search-for-marvin-gardens.pdf",
+          "description": "A blend of history and narrative by John McPhee about the origins of Monopoly, published in 1972.",
+          "date": 1972
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "Tell-Tale Heart",
+          "link": "pdfs/Tell-Tale_Heart.pdf",
+          "description": "A chilling psychological tale by Edgar Allan Poe of guilt and madness, published in 1843.",
+          "date": 1843
+        },
+        {
+          "type": "Poem",
+          "title": "The Tyger",
+          "link": "pdfs/tyger.pdf",
+          "description": "A vivid exploration by William Blake of creation and divine mystery, published in 1794.",
+          "date": 1794
+        },
+        {
+          "type": "Essay",
+          "title": "Total Eclipse",
+          "link": "pdfs/dillard_eclipse.pdf",
+          "description": "A philosophical account by Annie Dillard of witnessing a solar eclipse, published in 1982.",
+          "date": 1982
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "Hills Like White Elephants",
+          "link": "pdfs/May-Short.milky Way-Short-Stories.pdf",
+          "description": "A minimalist story by Ernest Hemingway about a couple’s tense conversation, published in 1927.",
+          "date": 1927
+        },
+        {
+          "type": "Poem",
+          "title": "Do Not Go Gentle into That Good Night",
+          "link": "pdfs/coleman_poem_do_not_go_gentle_into_that_good_night.pdf",
+          "description": "A passionate villanelle by Dylan Thomas urging resistance against death, published in 1951.",
+          "date": 1951
+        },
+        {
+          "type": "Essay",
+          "title": "Against Joie de Vivre",
+          "link": "pdfs/AgainstJoiedeVivre.pdf",
+          "description": "A humorous reflection by Phillip Lopate on the pursuit of happiness, published in 1986.",
+          "date": 1986
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Lottery",
+          "link": "pdfs/jackson_Lottery.pdf",
+          "description": "A shocking critique by Shirley Jackson of tradition and human nature, published in 1948.",
+          "date": 1948
+        },
+        {
+          "type": "Poem",
+          "title": "Because I Could Not Stop for Death",
+          "link": "pdfs/Because-I-Could-Not-Stop-for-Death.pdf",
+          "description": "A serene meditation by Emily Dickinson on mortality, published in 1890.",
+          "date": 1890
+        },
+        {
+          "type": "Essay",
+          "title": "The Fourth State of Matter",
+          "link": "pdfs/The-Fourth-State-of-Matter-The-New-Y.pdf",
+          "description": "A poignant narrative by Jo Ann Beard blending personal tragedy and science, published in 1996.",
+          "date": 1996
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Mark of the Beast",
+          "link": "pdfs/TheMarkOfTheBeastRudyardKipling.pdf",
+          "description": "A tale by Rudyard Kipling of a British man cursed after defiling a temple in India, exploring superstition and colonial arrogance, published in 1890.",
+          "date": 1890
+        },
+        {
+          "type": "Poem",
+          "title": "Invictus",
+          "link": "pdfs/Invictus-William-Ernest-Henley.pdf",
+          "description": "An inspiring poem by William Ernest Henley about resilience and inner strength, written in 1888.",
+          "date": 1888
+        },
+        {
+          "type": "Essay",
+          "title": "Consider the Lobster",
+          "link": "pdfs/Consider-the-Lobster-Wallace.pdf",
+          "description": "A thought-provoking piece by David Foster Wallace on ethics and food culture, published in 2004.",
+          "date": 2004
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Cage",
+          "link": "pdfs/the_cage.pdf",
+          "description": "A sci-fi tale by A. Bertram Chandler about a human captured by aliens, exploring freedom and perspective, published in 1957.",
+          "date": 1957
+        },
+        {
+          "type": "Poem",
+          "title": "If—",
+          "link": "pdfs/if_kipling.pdf",
+          "description": "A concise, rhythmic poem by Rudyard Kipling on resilience and virtue, offering timeless wisdom, written in 1895.",
+          "date": 1895
+        },
+        {
+          "type": "Essay",
+          "title": "The Depressed Person",
+          "link": "pdfs/the_depressed_person.pdf",
+          "description": "A raw, introspective essay by David Foster Wallace on depression, blending humor and pathos in a compact, poignant narrative, published in 1998.",
+          "date": 1998
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "A Good Man Is Hard to Find",
+          "link": "pdfs/a_good_man_is_hard_to_find.pdf",
+          "description": "A dark, morally complex story by Flannery O’Connor about a family’s encounter with a criminal, published in 1955.",
+          "date": 1955
+        },
+        {
+          "type": "Poem",
+          "title": "Still I Rise",
+          "link": "pdfs/still_i_rise.pdf",
+          "description": "An uplifting poem by Maya Angelou celebrating triumph over adversity, with lyrical power in a brief format, published in 1978.",
+          "date": 1978
+        },
+        {
+          "type": "Essay",
+          "title": "All Animals Are Equal",
+          "link": "pdfs/all_animals_are_equal.pdf",
+          "description": "A provocative excerpt from Peter Singer’s essay arguing for animal rights, with clear reasoning in a concise form, published in 1974.",
+          "date": 1974
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "An Occurrence at Owl Creek Bridge",
+          "link": "pdfs/an_occurrence_at_owl_creek_bridge.pdf",
+          "description": "A surreal Civil War story by Ambrose Bierce with a shocking twist, published in 1890.",
+          "date": 1890
+        },
+        {
+          "type": "Poem",
+          "title": "Fire and Ice",
+          "link": "pdfs/fire_and_ice.pdf",
+          "description": "A compact, potent poem by Robert Frost exploring destruction and desire, resonant in its brevity, published in 1920.",
+          "date": 1920
+        },
+        {
+          "type": "Essay",
+          "title": "On Seeing England for the First Time",
+          "link": "pdfs/on_seeing_england.pdf",
+          "description": "A sharp, personal essay by Jamaica Kincaid critiquing colonialism’s impact, delivered in vivid, concise prose, published in 1991.",
+          "date": 1991
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Garden Party",
+          "link": "pdfs/the_garden_party.pdf",
+          "description": "A lyrical story by Katherine Mansfield about class and mortality, published in 1922.",
+          "date": 1922
+        },
+        {
+          "type": "Poem",
+          "title": "This Is Just to Say",
+          "link": "pdfs/this_is_just_to_say.pdf",
+          "description": "A playful, deceptively simple poem by William Carlos Williams about plums and apology, rich in subtext, published in 1923.",
+          "date": 1923
+        },
+        {
+          "type": "Essay",
+          "title": "In the Belly of the Beast",
+          "link": "pdfs/in_the_belly_of_the_beast.pdf",
+          "description": "Barbara Kingsolver explores the U.S.'s relationship with military destruction, using a visit to a Titan missile silo as a backdrop, published in 2000.",
+          "date": 2000
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "Strikebreaker",
+          "link": "pdfs/strikebreaker.pdf",
+          "description": "A tense sci-fi story by Isaac Asimov about a worker breaking a caste strike on a confined space colony, probing social roles and sacrifice, published in 1957.",
+          "date": 1957
+        },
+        {
+          "type": "Poem",
+          "title": "Hope is the thing with feathers",
+          "link": "pdfs/hope_is_the_thing.pdf",
+          "description": "A vivid, brief poem by Emily Dickinson personifying hope as a bird, uplifting and concise, published in 1891.",
+          "date": 1891
+        },
+        {
+          "type": "Essay",
+          "title": "Slouching Towards Bethlehem",
+          "link": "pdfs/slouching_towards_bethlehem.pdf",
+          "description": "A concise excerpt from Joan Didion’s iconic essay on 1960s counterculture, blending sharp observation and haunting tone, published in 1968.",
+          "date": 1968
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "Nightfall",
+          "link": "pdfs/nightfall.pdf",
+          "description": "A landmark sci-fi story by Isaac Asimov about a planet facing darkness, exploring societal collapse, published in 1941.",
+          "date": 1941
+        },
+        {
+          "type": "Poem",
+          "title": "A Dream Deferred",
+          "link": "pdfs/a_dream_deferred.pdf",
+          "description": "A brief, powerful poem by Langston Hughes questioning the fate of postponed dreams, with vivid imagery, published in 1951.",
+          "date": 1951
+        },
+        {
+          "type": "Essay",
+          "title": "The White Album",
+          "link": "pdfs/the_white_album.pdf",
+          "description": "A long essay from Joan Didion’s reflecting on the 1960s, blending personal and cultural insights, published in 1968.",
+          "date": 1968
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Open Window",
+          "link": "pdfs/the_open_window.pdf",
+          "description": "A witty, ironic story by Saki with a clever twist, published in 1914.",
+          "date": 1914
+        },
+        {
+          "type": "Poem",
+          "title": "Stopping by Woods on a Snowy Evening",
+          "link": "pdfs/stopping_by_woods.pdf",
+          "description": "A serene poem by Robert Frost about pause and duty, concise yet deeply evocative, published in 1923.",
+          "date": 1923
+        },
+        {
+          "type": "Essay",
+          "title": "A Modest Proposal",
+          "link": "pdfs/a_modest_proposal.pdf",
+          "description": "A biting satirical essay by Jonathan Swift proposing an outrageous solution to poverty, with sharp, concise prose, published in 1729.",
+          "date": 1729
+        }
+      ]
+    }
+  ]
+}
