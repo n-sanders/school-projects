@@ -1,24 +1,9 @@
 {
     "common":[
         {
-            "name": "Seven Sanders Spelling",
-            "url": "https://seven-sanders-spelling.vercel.app",
-            "icon": "https://seven-sanders-spelling.vercel.app/images/Spelling_Practice.png"
-        },
-        {
-            "name": "Chat LLM",
-            "url": "https://chat-llm-sigma.vercel.app",
-            "icon": "https://pbs.twimg.com/profile_images/1893219113717342208/Vgg2hEPa_400x400.jpg"
-        },
-        {
-            "name": "Event Sequencing",
-            "url": "https://card-ordering-n-sanders-projects.vercel.app/",
-            "icon": "https://card-ordering-n-sanders-projects.vercel.app/assets/basic/Quad.jpg"
-        },
-        {
-            "name": "Flux and Fizzle: Chase the Chaos",
-            "url": "https://flux-and-fizzle.vercel.app/",
-            "icon": "https://flux-and-fizzle.vercel.app/images/fizzle.jpg"
+            "name": "Typing",
+            "url": "https://thesevensanders.typingclub.com/",
+            "icon": "https://typingmentor.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbs3wcomf%2Fproduction%2F486ca37cbb98245dddd1080e8fb02c133d035921-732x486.jpg%3Frect%3D0%2C2%2C732%2C483%26w%3D808%26h%3D533%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
         },
         {
             "name": "I read a book!",
@@ -51,11 +36,6 @@
             "icon": "https://static.scientificamerican.com/dam/m/128e9a2bf8a1939/original/DM0HT8_WEB.jpg?w=1200"
         },
         {
-            "name": "Family Timeline",
-            "url": "https://wikitrivia-six.vercel.app/?deck=family",
-            "icon": "https://cdn-icons-png.flaticon.com/512/4394/4394577.png"
-        },
-        {
             "name": "Nicene Creed",
             "url": "https://www.usccb.org/prayers/nicene-creed",
             "icon": "https://media.istockphoto.com/id/1437405171/vector/christian-cross-sign-hipster-sun-starburst-circle-retro-vintage-design-isolated-on-white.jpg?s=612x612&w=0&k=20&c=_399VjvuJILzX9dV1K04PB2Ur5nQirNtR5RKBGeYnNA="
@@ -80,13 +60,39 @@
             "url": "https://www.dynamiccatholic.com/saint-today",
             "icon": "https://hallow.com/wp-content/uploads/2023/06/Patron-Saints-of-Europe_Working-Artboard-scaled.jpg"
         },
+    ],
+    "arcade":[
         {
             "name": "Farm Survivor",
             "url": "https://gx.games/games/sb7kza/farm-suvivor-sanders/tracks/3e8d3c02-4487-4c2c-ae9e-d11ce69999d9/",
             "icon": "https://pbs.twimg.com/profile_images/1808582533203849216/IgUkq28t_400x400.jpg"
-        }
+        },
+        {
+            "name": "Family Timeline",
+            "url": "https://wikitrivia-six.vercel.app/?deck=family",
+            "icon": "https://cdn-icons-png.flaticon.com/512/4394/4394577.png"
+        },
+        {
+            "name": "Seven Sanders Spelling",
+            "url": "https://seven-sanders-spelling.vercel.app",
+            "icon": "https://seven-sanders-spelling.vercel.app/images/Spelling_Practice.png"
+        },
+        {
+            "name": "Event Sequencing",
+            "url": "https://card-ordering-n-sanders-projects.vercel.app/",
+            "icon": "https://card-ordering-n-sanders-projects.vercel.app/assets/basic/Quad.jpg"
+        },
+        {
+            "name": "Flux and Fizzle: Chase the Chaos",
+            "url": "https://flux-and-fizzle.vercel.app/",
+            "icon": "https://flux-and-fizzle.vercel.app/images/fizzle.jpg"
+        },
+        {
+            "name": "Ancient Timeline",
+            "url": "https://wikitrivia-six.vercel.app/?deck=ancient",
+            "icon": "https://cdn-icons-png.flaticon.com/512/4394/4394577.png"
+        },
     ],
-
     "evie":[
         {
             "name": "50 States",
@@ -102,16 +108,6 @@
             "name": "US State Capitals",
             "url": "https://www.geoguessr.com/vgp/3063",
             "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
-        },
-        {
-            "name": "Canadian Provinces",
-            "url": "https://www.geoguessr.com/vgp/3006",
-            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/640px-Flag_of_Canada_%28Pantone%29.svg.png"
-        },
-        {
-            "name": "Australia",
-            "url": "https://www.geoguessr.com/vgp/3060",
-            "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZttcrcgYE4dVqR0xnRhlgAjYAPC7ShcUQn4bMZ7J1M4HniMAnYIbkklOJ-FFDseFUoJs&usqp=CAU"
         },
         {
             "name": "Great Lakes",
@@ -147,21 +143,6 @@
 
     "noah":[
         {
-            "name": "Typing",
-            "url": "https://thesevensanders.typingclub.com/",
-            "icon": "https://typingmentor.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbs3wcomf%2Fproduction%2F486ca37cbb98245dddd1080e8fb02c133d035921-732x486.jpg%3Frect%3D0%2C2%2C732%2C483%26w%3D808%26h%3D533%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
-        },
-        {
-            "name": "Choir Songs",
-            "url": "https://www.raachechoirs.org/con-brio-part-2-songs",
-            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
-        },
-        {
-            "name": "Ancient Timeline",
-            "url": "https://wikitrivia-six.vercel.app/?deck=ancient",
-            "icon": "https://cdn-icons-png.flaticon.com/512/4394/4394577.png"
-        },
-        {
             "name": "Midwest States",
             "url": "https://www.geoguessr.com/vgp/3138",
             "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
@@ -175,11 +156,6 @@
             "name": "Great Lakes",
             "url": "https://www.geoguessr.com/vgp/3367",
             "icon": "https://www.c2st.org/wp-content/uploads/2010/10/Colour-Great-Lakes-for-Site-Web.jpg"
-        },
-        {
-            "name": "Founding Fathers",
-            "url": "https://www.geoguessr.com/fl/2091",
-            "icon": "https://flymeflag.com/cdn/shop/products/Betsy-Ross-Flags-Flag_3bba4777-65a7-429a-a7e3-cb48fc4ce990.jpg?v=1658823236"
         },
         {
             "name": "Southern States",
@@ -210,16 +186,6 @@
 
     "hannah":[
         {
-            "name": "Typing",
-            "url": "https://thesevensanders.typingclub.com/",
-            "icon": "https://typingmentor.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbs3wcomf%2Fproduction%2F486ca37cbb98245dddd1080e8fb02c133d035921-732x486.jpg%3Frect%3D0%2C2%2C732%2C483%26w%3D808%26h%3D533%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
-        },
-        {
-            "name": "Choir Songs",
-            "url": "https://www.raachechoirs.org/con-brio-songs-part-1",
-            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
-        },
-        {
             "name": "Midwest States",
             "url": "https://www.geoguessr.com/vgp/3138",
             "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
@@ -233,11 +199,6 @@
             "name": "Great Lakes",
             "url": "https://www.geoguessr.com/vgp/3367",
             "icon": "https://www.c2st.org/wp-content/uploads/2010/10/Colour-Great-Lakes-for-Site-Web.jpg"
-        },
-        {
-            "name": "Founding Fathers",
-            "url": "https://www.geoguessr.com/fl/2091",
-            "icon": "https://flymeflag.com/cdn/shop/products/Betsy-Ross-Flags-Flag_3bba4777-65a7-429a-a7e3-cb48fc4ce990.jpg?v=1658823236"
         },
         {
             "name": "Southern States",
@@ -268,41 +229,16 @@
 
     "judah":[
         {
-            "name": "Typing",
-            "url": "https://thesevensanders.typingclub.com/",
-            "icon": "https://typingmentor.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fbs3wcomf%2Fproduction%2F486ca37cbb98245dddd1080e8fb02c133d035921-732x486.jpg%3Frect%3D0%2C2%2C732%2C483%26w%3D808%26h%3D533%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
-        },
-        {
-            "name": "Bible Verse",
-            "url": "https://thesevensanders.typingclub.com/",
-            "icon": "https://cdn-icons-png.flaticon.com/512/2600/2600768.png"
-        },
-        {
-            "name": "Lord Make My Life a Little Light choir song",
-            "url": "https://1drv.ms/u/s!Aopbjbnz-tWJhptaJbw0pt-GRK9lVA?e=dfJFMz",
-            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
-        },
-        {
-            "name": "Give Thanks choir song",
-            "url": "https://1drv.ms/u/s!Aopbjbnz-tWJhptZtxJwvctV1eTDGg?e=RjvsbQ",
-            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
+            "name": "Midwest States",
+            "url": "https://www.geoguessr.com/vgp/3138",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
         }
     ],
     "ezra":[
         {
-            "name": "Bible Verse",
-            "url": "https://thesevensanders.typingclub.com/",
-            "icon": "https://cdn-icons-png.flaticon.com/512/2600/2600768.png"
-        },
-        {
-            "name": "Lord Make My Life a Little Light choir song",
-            "url": "https://1drv.ms/u/s!Aopbjbnz-tWJhptaJbw0pt-GRK9lVA?e=dfJFMz",
-            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
-        },
-        {
-            "name": "Give Thanks choir song",
-            "url": "https://1drv.ms/u/s!Aopbjbnz-tWJhptZtxJwvctV1eTDGg?e=RjvsbQ",
-            "icon": "https://media.istockphoto.com/id/1184930352/vector/choir-line-with-editable-stroke.jpg?s=612x612&w=0&k=20&c=8iuQpve_wqZfSKSKOJCADYSi-MDuCbOXCMYnF3gMATs="
+            "name": "Midwest States",
+            "url": "https://www.geoguessr.com/vgp/3138",
+            "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
         }
     ]
 }
