@@ -59,7 +59,7 @@
             "name": "Saint of the Day",
             "url": "https://www.dynamiccatholic.com/saint-today",
             "icon": "https://hallow.com/wp-content/uploads/2023/06/Patron-Saints-of-Europe_Working-Artboard-scaled.jpg"
-        },
+        }
     ],
     "arcade":[
         {
@@ -91,7 +91,7 @@
             "name": "Ancient Timeline",
             "url": "https://wikitrivia-six.vercel.app/?deck=ancient",
             "icon": "https://cdn-icons-png.flaticon.com/512/4394/4394577.png"
-        },
+        }
     ],
     "evie":[
         {
