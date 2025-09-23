@@ -189,6 +189,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .then(response => response.json())
     .then(data => {
       const linksContainer = document.getElementById('links-container');
+      const arcadeContainer = document.getElementById('arcade-container');
       const evieContainer = document.getElementById('evie-container');
       const noahContainer = document.getElementById('noah-container');
       const hannahContainer = document.getElementById('hannah-container');
@@ -226,6 +227,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       // Create cards for common links
       data.common.forEach(link => createLinkCard(linksContainer, link));
+
+      if (Array.isArray(data.arcade)) {
+        data.arcade.forEach(link => createLinkCard(arcadeContainer, link));
+      }
 
       data.evie.forEach(link => createLinkCard(evieContainer, link));
       data.noah.forEach(link => createLinkCard(noahContainer, link));
