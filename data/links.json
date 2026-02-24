@@ -232,6 +232,11 @@
             "name": "Midwest States",
             "url": "https://www.geoguessr.com/vgp/3138",
             "icon": "https://media.istockphoto.com/id/1363086064/vector/usa-map-with-divided-states-on-a-transparent-background.jpg?s=612x612&w=0&k=20&c=rtw_UwKtPozK_QaNwOUHHuQMLXHvTU5mgK5hE7fZXyw="
+        },
+        {
+            "name": "Fact Flip",
+            "url": "https://n-sanders.github.io/fact-flip/fact-flip.html",
+            "icon": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22512%22%20height%3D%22512%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%234f46e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306b6d4%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2272%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22256%22%20y%3D%22220%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2272%22%20font-weight%3D%22700%22%20fill%3D%22white%22%3EFACT%3C%2Ftext%3E%3Ctext%20x%3D%22256%22%20y%3D%22302%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2272%22%20font-weight%3D%22700%22%20fill%3D%22white%22%3EFLIP%3C%2Ftext%3E%3Ctext%20x%3D%22256%22%20y%3D%22370%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2232%22%20fill%3D%22%23dbeafe%22%3EMultiplication%3C%2Ftext%3E%3C%2Fsvg%3E"
         }
     ],
     "ezra":[
