@@ -14,7 +14,7 @@
           "type": "Poem",
           "title": "Sonnet 18",
           "link": "pdfs/the-sonnets-018-sonnet-18.pdf",
-          "description": "A timeless sonnet by William Shakespeare celebrating love and poetry’s enduring power, written in 1609.",
+          "description": "A timeless sonnet by William Shakespeare celebrating love and poetry\u2019s enduring power, written in 1609.",
           "date": 1609
         },
         {
@@ -33,14 +33,14 @@
           "type": "Short Story",
           "title": "A Worn Path",
           "link": "pdfs/a_worn_path_by_eudora_welty.pdf",
-          "description": "A moving story by Eudora Welty of an elderly woman’s journey, rich in symbolism and resilience, published in 1941.",
+          "description": "A moving story by Eudora Welty of an elderly woman\u2019s journey, rich in symbolism and resilience, published in 1941.",
           "date": 1941
         },
         {
           "type": "Poem",
           "title": "The Road Not Taken",
           "link": "pdfs/The-Road-Not-Taken.pdf",
-          "description": "A meditation by Robert Frost on life’s choices and their lasting impact, published in 1916.",
+          "description": "A meditation by Robert Frost on life\u2019s choices and their lasting impact, published in 1916.",
           "date": 1916
         },
         {
@@ -111,7 +111,7 @@
           "type": "Short Story",
           "title": "Hills Like White Elephants",
           "link": "pdfs/May-Short.milky Way-Short-Stories.pdf",
-          "description": "A minimalist story by Ernest Hemingway about a couple’s tense conversation, published in 1927.",
+          "description": "A minimalist story by Ernest Hemingway about a couple\u2019s tense conversation, published in 1927.",
           "date": 1927
         },
         {
@@ -194,7 +194,7 @@
         },
         {
           "type": "Poem",
-          "title": "If—",
+          "title": "If\u2014",
           "link": "pdfs/if_kipling.pdf",
           "description": "A concise, rhythmic poem by Rudyard Kipling on resilience and virtue, offering timeless wisdom, written in 1895.",
           "date": 1895
@@ -215,7 +215,7 @@
           "type": "Short Story",
           "title": "A Good Man Is Hard to Find",
           "link": "pdfs/a_good_man_is_hard_to_find.pdf",
-          "description": "A dark, morally complex story by Flannery O’Connor about a family’s encounter with a criminal, published in 1955.",
+          "description": "A dark, morally complex story by Flannery O\u2019Connor about a family\u2019s encounter with a criminal, published in 1955.",
           "date": 1955
         },
         {
@@ -229,7 +229,7 @@
           "type": "Essay",
           "title": "All Animals Are Equal",
           "link": "pdfs/all_animals_are_equal.pdf",
-          "description": "A provocative excerpt from Peter Singer’s essay arguing for animal rights, with clear reasoning in a concise form, published in 1974.",
+          "description": "A provocative excerpt from Peter Singer\u2019s essay arguing for animal rights, with clear reasoning in a concise form, published in 1974.",
           "date": 1974
         }
       ]
@@ -255,7 +255,7 @@
           "type": "Essay",
           "title": "On Seeing England for the First Time",
           "link": "pdfs/on_seeing_england.pdf",
-          "description": "A sharp, personal essay by Jamaica Kincaid critiquing colonialism’s impact, delivered in vivid, concise prose, published in 1991.",
+          "description": "A sharp, personal essay by Jamaica Kincaid critiquing colonialism\u2019s impact, delivered in vivid, concise prose, published in 1991.",
           "date": 1991
         }
       ]
@@ -307,7 +307,7 @@
           "type": "Essay",
           "title": "Slouching Towards Bethlehem",
           "link": "pdfs/slouching_towards_bethlehem.pdf",
-          "description": "A concise excerpt from Joan Didion’s iconic essay on 1960s counterculture, blending sharp observation and haunting tone, published in 1968.",
+          "description": "A concise excerpt from Joan Didion\u2019s iconic essay on 1960s counterculture, blending sharp observation and haunting tone, published in 1968.",
           "date": 1968
         }
       ]
@@ -333,7 +333,7 @@
           "type": "Essay",
           "title": "The White Album",
           "link": "pdfs/the_white_album.pdf",
-          "description": "A long essay from Joan Didion’s reflecting on the 1960s, blending personal and cultural insights, published in 1968.",
+          "description": "A long essay from Joan Didion\u2019s reflecting on the 1960s, blending personal and cultural insights, published in 1968.",
           "date": 1968
         }
       ]
@@ -361,6 +361,188 @@
           "link": "pdfs/a_modest_proposal.pdf",
           "description": "A biting satirical essay by Jonathan Swift proposing an outrageous solution to poverty, with sharp, concise prose, published in 1729.",
           "date": 1729
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Yellow Wallpaper",
+          "link": "pdfs/The-Yellow-Wall-Paper.pdf",
+          "description": "A haunting psychological tale by Charlotte Perkins Gilman of a woman's mental unraveling under restrictive 'rest cure', published in 1892.",
+          "date": 1892
+        },
+        {
+          "type": "Poem",
+          "title": "Dulce et Decorum Est",
+          "link": "pdfs/Owen-InDulce-Poem.pdf",
+          "description": "A powerful, unflinching anti-war poem by Wilfred Owen that exposes the horrors of trench warfare in World War I, published in 1917.",
+          "date": 1917
+        },
+        {
+          "type": "Essay",
+          "title": "Shooting an Elephant",
+          "link": "pdfs/orwellelephant.pdf",
+          "description": "A compelling reflection by George Orwell on imperialism, authority, and moral pressure in colonial Burma, published in 1936.",
+          "date": 1936
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Gift of the Magi",
+          "link": "pdfs/the_gift_of_the_magi.pdf",
+          "description": "A tender, ironic tale by O. Henry of a young couple's sacrificial Christmas gifts and true generosity, published in 1905.",
+          "date": 1905
+        },
+        {
+          "type": "Poem",
+          "title": "We Real Cool",
+          "link": "pdfs/brooks-werealcool.pdf",
+          "description": "A rhythmic, jazz-inflected poem by Gwendolyn Brooks capturing the defiant lives of pool players, published in 1959.",
+          "date": 1959
+        },
+        {
+          "type": "Essay",
+          "title": "Once More to the Lake",
+          "link": "pdfs/EBWhite-Once-More-to-the-lake.pdf",
+          "description": "A nostalgic and poignant essay by E.B. White on memory, time's passage, and father-son bonds at a summer lake, published in 1941.",
+          "date": 1941
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "There Will Come Soft Rains",
+          "link": "pdfs/There Will Come Soft Rains by Ray Bradbury.pdf",
+          "description": "A haunting post-apocalyptic story by Ray Bradbury about an automated house persisting after nuclear war, published in 1950.",
+          "date": 1950
+        },
+        {
+          "type": "Poem",
+          "title": "The Lake Isle of Innisfree",
+          "link": "pdfs/Yeats-Innisfree.pdf",
+          "description": "A lyrical poem by W.B. Yeats expressing a deep yearning for peace and solitude in nature, published in 1890.",
+          "date": 1890
+        },
+        {
+          "type": "Essay",
+          "title": "The Death of the Moth",
+          "link": "pdfs/Woolf_Death-of-a-Moth.pdf",
+          "description": "A delicate philosophical meditation by Virginia Woolf on life, death, and vitality witnessed in a moth's struggle, published in 1942.",
+          "date": 1942
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Most Dangerous Game",
+          "link": "pdfs/The Most Dangerous Game by Richard Connell.pdf",
+          "description": "A suspenseful adventure tale by Richard Connell in which a hunter becomes the hunted on a remote island, published in 1924.",
+          "date": 1924
+        },
+        {
+          "type": "Poem",
+          "title": "Richard Cory",
+          "link": "pdfs/Richard_Cory.pdf",
+          "description": "An ironic poem by Edwin Arlington Robinson revealing the gap between appearance and inner despair, published in 1897.",
+          "date": 1897
+        },
+        {
+          "type": "Essay",
+          "title": "How It Feels to Be Colored Me",
+          "link": "pdfs/How-It-Feels-to-Be-Colored-Me.pdf",
+          "description": "A vibrant, insightful essay by Zora Neale Hurston on racial identity, individuality, and embracing life, published in 1928.",
+          "date": 1928
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Necklace",
+          "link": "pdfs/The-Necklace.pdf",
+          "description": "A masterful ironic story by Guy de Maupassant about pride, debt, and the high cost of appearances, published in 1884.",
+          "date": 1884
+        },
+        {
+          "type": "Poem",
+          "title": "My Last Duchess",
+          "link": "pdfs/My-Last-Duchess.pdf",
+          "description": "A chilling dramatic monologue by Robert Browning that exposes jealousy and power through a duke's words, published in 1842.",
+          "date": 1842
+        },
+        {
+          "type": "Essay",
+          "title": "A Hanging",
+          "link": "pdfs/orwell_a_hanging.pdf",
+          "description": "A gripping personal account by George Orwell of witnessing an execution and confronting its human reality, published in 1931.",
+          "date": 1931
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "A Rose for Emily",
+          "link": "pdfs/RoseforEmily.pdf",
+          "description": "A Southern Gothic tale by William Faulkner exploring isolation, tradition, and decay in a small town, published in 1930.",
+          "date": 1930
+        },
+        {
+          "type": "Poem",
+          "title": "anyone lived in a pretty how town",
+          "link": "pdfs/anyone lived_text.pdf",
+          "description": "An inventive, rhythmic poem by e.e. cummings on the cycles of life, love, and indifference of society, published in 1940.",
+          "date": 1940
+        },
+        {
+          "type": "Essay",
+          "title": "Politics and the English Language",
+          "link": "pdfs/PoliticsandEngLang.pdf",
+          "description": "A sharp critique by George Orwell of vague, pretentious language in politics and its dangers to thought, published in 1946.",
+          "date": 1946
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Bet",
+          "link": "pdfs/the-bet.pdf",
+          "description": "A profound philosophical story by Anton Chekhov examining the value of life through a high-stakes wager on isolation, published in 1889.",
+          "date": 1889
+        },
+        {
+          "type": "Poem",
+          "title": "Pied Beauty",
+          "link": "pdfs/Pied-Beauty.pdf",
+          "description": "A joyful celebration by Gerard Manley Hopkins of God's dappled, varied creations in nature, published in 1877.",
+          "date": 1877
+        },
+        {
+          "type": "Essay",
+          "title": "The Crack-Up",
+          "link": "pdfs/The Crack-Up.pdf",
+          "description": "A candid, introspective essay by F. Scott Fitzgerald on personal crisis, resilience, and the price of success, published in 1936.",
+          "date": 1936
         }
       ]
     }
