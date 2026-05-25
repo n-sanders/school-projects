@@ -545,6 +545,58 @@
           "date": 1936
         }
       ]
+    },
+    {
+      "day": 22,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Monkey's Paw",
+          "link": "pdfs/the_monkeys_paw.pdf",
+          "description": "A suspenseful classic by W.W. Jacobs in which a family's three wishes, granted by a cursed monkey's paw, lead to tragic and irreversible consequences, published in 1902.",
+          "date": 1902
+        },
+        {
+          "type": "Poem",
+          "title": "The Second Coming",
+          "link": "pdfs/the_second_coming.pdf",
+          "description": "A powerful, apocalyptic poem by W.B. Yeats capturing the collapse of order and the arrival of a new, terrifying age — 'Things fall apart; the centre cannot hold', published in 1920.",
+          "date": 1920
+        },
+        {
+          "type": "Essay",
+          "title": "Pasting It Together",
+          "link": "pdfs/Pasting-It-Together.pdf",
+          "description": "F. Scott Fitzgerald’s direct follow-on to 'The Crack-Up,' in which he describes the painstaking process of reassembling his shattered ideals, identity, and career after total collapse, published in 1936.",
+          "date": 1936
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "readings": [
+        {
+          "type": "Short Story",
+          "title": "The Story of an Hour",
+          "link": "pdfs/the_story_of_an_hour.pdf",
+          "description": "A compact, revolutionary story by Kate Chopin about a woman’s fleeting epiphany of freedom and the crushing return of reality, published in 1894.",
+          "date": 1894
+        },
+        {
+          "type": "Poem",
+          "title": "Acquainted with the Night",
+          "link": "pdfs/acquainted_with_the_night.pdf",
+          "description": "A somber, introspective sonnet by Robert Frost about solitary walks through darkness, evoking isolation, quiet despair, and endurance, published in 1928.",
+          "date": 1928
+        },
+        {
+          "type": "Essay",
+          "title": "Handle with Care",
+          "link": "pdfs/Handle-with-Care.pdf",
+          "description": "The final essay in F. Scott Fitzgerald’s 'Crack-Up' trilogy, offering a stark, pragmatic philosophy for living with diminished resources and carefully conserving what remains after personal ruin, published in 1936.",
+          "date": 1936
+        }
+      ]
     }
   ]
 }
