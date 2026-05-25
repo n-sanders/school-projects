@@ -560,14 +560,14 @@
           "type": "Poem",
           "title": "The Second Coming",
           "link": "pdfs/the_second_coming.pdf",
-          "description": "A powerful, apocalyptic poem by W.B. Yeats capturing the collapse of order and the arrival of a new, terrifying age — 'Things fall apart; the centre cannot hold', published in 1920.",
+          "description": "A powerful, apocalyptic poem by W.B. Yeats capturing the collapse of order and the arrival of a new, terrifying age \u2014 'Things fall apart; the centre cannot hold', published in 1920.",
           "date": 1920
         },
         {
           "type": "Essay",
           "title": "Pasting It Together",
-          "link": "pdfs/Pasting-It-Together.pdf",
-          "description": "F. Scott Fitzgerald’s direct follow-on to 'The Crack-Up,' in which he describes the painstaking process of reassembling his shattered ideals, identity, and career after total collapse, published in 1936.",
+          "link": "pdfs/Pasting_It_Together.pdf",
+          "description": "F. Scott Fitzgerald\u2019s direct follow-on to 'The Crack-Up,' in which he describes the painstaking process of reassembling his shattered ideals, identity, and career after total collapse, published in 1936.",
           "date": 1936
         }
       ]
@@ -579,7 +579,7 @@
           "type": "Short Story",
           "title": "The Story of an Hour",
           "link": "pdfs/the_story_of_an_hour.pdf",
-          "description": "A compact, revolutionary story by Kate Chopin about a woman’s fleeting epiphany of freedom and the crushing return of reality, published in 1894.",
+          "description": "A compact, revolutionary story by Kate Chopin about a woman\u2019s fleeting epiphany of freedom and the crushing return of reality, published in 1894.",
           "date": 1894
         },
         {
@@ -592,8 +592,8 @@
         {
           "type": "Essay",
           "title": "Handle with Care",
-          "link": "pdfs/Handle-with-Care.pdf",
-          "description": "The final essay in F. Scott Fitzgerald’s 'Crack-Up' trilogy, offering a stark, pragmatic philosophy for living with diminished resources and carefully conserving what remains after personal ruin, published in 1936.",
+          "link": "pdfs/Handle-with_Care.pdf",
+          "description": "The final essay in F. Scott Fitzgerald\u2019s 'Crack-Up' trilogy, offering a stark, pragmatic philosophy for living with diminished resources and carefully conserving what remains after personal ruin, published in 1936.",
           "date": 1936
         }
       ]
