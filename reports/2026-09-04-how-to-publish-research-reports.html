@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Publish Research Assistant Reports</title>
+  <style>
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+      max-width: 42rem;
+      margin: 2rem auto;
+      padding: 0 1.25rem;
+      color: #1f2937;
+    }
+    h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+    .meta { color: #4b5563; font-size: 0.95rem; margin-bottom: 1.5rem; }
+    h2 { font-size: 1.25rem; margin-top: 1.75rem; }
+    code { background: #f3f4f6; padding: 0.1rem 0.35rem; border-radius: 4px; }
+    ol { padding-left: 1.25rem; }
+    a { color: #2563eb; }
+  </style>
+</head>
+<body>
+  <p><a href="../index.html">← Home</a> · <a href="../reports.html">All reports</a></p>
+  <h1>How to Publish Research Assistant Reports</h1>
+  <p class="meta">4 September 2026 · sample · publishing</p>
+  <p>
+    This page is a placeholder so the Research Reports section is browseable.
+    Self-contained HTML reports from the Research Assistant bot belong in the
+    <code>reports/</code> folder on this GitHub Pages site.
+  </p>
+  <h2>Drop-and-publish</h2>
+  <ol>
+    <li>Save the report as <code>reports/YYYY-MM-DD-topic-slug.html</code>.</li>
+    <li>Append an entry to <code>data/reports.json</code> with <code>title</code>, ISO <code>date</code>, and <code>path</code>. Optional: <code>summary</code>, <code>tags</code>.</li>
+    <li>Commit and push to <code>main</code>. GitHub Pages deploys; the report appears on the home page and at <code>reports.html</code>.</li>
+  </ol>
+  <p>Do not add reports to <code>data/links.json</code>. Kid tabs and the Arcade stay separate.</p>
+</body>
+</html>

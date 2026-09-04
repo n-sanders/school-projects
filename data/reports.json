@@ -1,0 +1,11 @@
+{
+  "reports": [
+    {
+      "title": "How to Publish Research Assistant Reports",
+      "date": "2026-09-04",
+      "path": "reports/2026-09-04-how-to-publish-research-reports.html",
+      "summary": "A sample report showing where Research Assistant HTML files land and how to list them on this site.",
+      "tags": ["sample", "publishing"]
+    }
+  ]
+}

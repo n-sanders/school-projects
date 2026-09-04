@@ -28,6 +28,7 @@ function setTheme(theme) {
 // Toggle theme function
 const themeCheckbox = document.getElementById('checkbox');
 if (themeCheckbox) {
+  themeCheckbox.dataset.bound = 'true';
   themeCheckbox.addEventListener('change', function() {
     if (this.checked) {
       setTheme('dark-mode');
