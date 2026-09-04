@@ -5,7 +5,23 @@
       "date": "2026-09-04",
       "path": "reports/2026-09-04-how-to-publish-research-reports.html",
       "summary": "A sample report showing where Research Assistant HTML files land and how to list them on this site.",
-      "tags": ["sample", "publishing"]
+      "tags": [
+        "sample",
+        "publishing"
+      ]
+    },
+    {
+      "title": "GPT-6 Astra Launch-Day Briefing",
+      "date": "2026-09-03",
+      "path": "reports/2026-09-03-gpt-6-astra.html",
+      "summary": "OpenAI GPT-6 Astra launched 3 Sep 2026: Daybreak-first rollout, Critical cyber designation, API gpt-6-astra, benchmarks vs independent Artificial Analysis, Hugging Face context, and deep links.",
+      "tags": [
+        "openai",
+        "gpt-6",
+        "astra",
+        "ai",
+        "launch"
+      ]
     }
   ]
 }
