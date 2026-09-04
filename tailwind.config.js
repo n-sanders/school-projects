@@ -3,7 +3,8 @@ module.exports = {
   content: [
     './pages/**/*.{html,js}',  // If you have a pages directory
     './js/*.js',
-    './index.html', // If you have a single root index.html
+    './index.html',
+    './reports.html',
     // Add other directories or files where Tailwind classes are used
   ],
   theme: {
