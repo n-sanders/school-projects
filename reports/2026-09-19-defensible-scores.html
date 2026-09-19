@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEFENSIBLE SCORES — Bare ratings vs evidence-then-score for LLM judges</title>
+<meta name="description" content="Methods/psychometrics briefing: score-only LLM judgments vs evidence-then-score. Verified from Nathan Sanders Grok share research, 19 Sep 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0b1220;
+  --navy: #132238;
+  --navy-2: #1a2f4a;
+  --slate: #243552;
+  --text: #e8eef7;
+  --muted: #9aadc4;
+  --faint: #6b8099;
+  --amber: #e8a54b;
+  --amber-dim: #c4842e;
+  --amber-soft: rgba(232,165,75,0.14);
+  --amber-line: rgba(232,165,75,0.35);
+  --ok: #5bb89a;
+  --warn: #e8a54b;
+  --bad: #d97a6c;
+  --partial: #c9a86c;
+  --card: #101a2c;
+  --border: rgba(154,173,196,0.18);
+  --max: 920px;
+  --nav-h: 52px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--amber); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: #f0c078; }
+code, .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.9em; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+/* Sticky nav */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(11,18,32,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  height: var(--nav-h);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 1.25rem;
+  height: 100%; display: flex; align-items: center; gap: 0.75rem;
+  overflow-x: auto; white-space: nowrap; scrollbar-width: thin;
+}
+.nav a {
+  color: var(--muted); font-size: 0.78rem; font-weight: 500;
+  text-decoration: none; letter-spacing: 0.02em; padding: 0.35rem 0.45rem;
+  border-radius: 4px;
+}
+.nav a:hover { color: var(--amber); background: var(--amber-soft); }
+.nav .brand {
+  color: var(--amber); font-family: Fraunces, Georgia, serif;
+  font-weight: 600; font-size: 0.85rem; margin-right: 0.5rem;
+  letter-spacing: 0.04em;
+}
+
+/* Masthead */
+.mast {
+  padding: 2.75rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--amber); margin: 0 0 0.75rem;
+}
+h1 {
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 700; font-size: clamp(2rem, 5vw, 2.85rem);
+  line-height: 1.12; margin: 0 0 0.6rem; color: var(--text);
+  letter-spacing: -0.02em;
+}
+.subtitle {
+  font-size: 1.15rem; color: var(--muted); margin: 0 0 1.25rem;
+  font-weight: 400; max-width: 38em;
+}
+.meta-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--amber);
+  padding: 0.9rem 1.1rem;
+  font-size: 0.88rem; color: var(--muted);
+}
+.meta-box strong { color: var(--text); }
+.meta-box .warn-line {
+  margin-top: 0.55rem; color: var(--amber);
+  font-family: "IBM Plex Mono", monospace; font-size: 0.78rem;
+}
+
+/* Sections */
+section { margin: 2.5rem 0; scroll-margin-top: calc(var(--nav-h) + 12px); }
+h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.45rem; font-weight: 600; margin: 0 0 1rem;
+  color: var(--text); letter-spacing: -0.01em;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--amber-line);
+}
+h3 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.08rem; font-weight: 600; margin: 1.5rem 0 0.6rem;
+  color: var(--amber);
+}
+h4 { font-size: 0.95rem; font-weight: 600; margin: 1.1rem 0 0.4rem; color: var(--text); }
+p { margin: 0.65rem 0; }
+ul, ol { margin: 0.5rem 0 0.8rem; padding-left: 1.25rem; }
+li { margin: 0.35rem 0; }
+li::marker { color: var(--amber-dim); }
+
+.tag {
+  display: inline-block; font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.04em;
+  padding: 0.12rem 0.4rem; border-radius: 3px; vertical-align: middle;
+  margin-left: 0.25rem; white-space: nowrap;
+}
+.tag-v { background: rgba(91,184,154,0.18); color: var(--ok); }
+.tag-o { background: rgba(232,165,75,0.18); color: var(--warn); }
+.tag-m { background: rgba(217,122,108,0.2); color: var(--bad); }
+.tag-f { background: rgba(154,173,196,0.15); color: var(--muted); }
+.tag-p { background: rgba(201,168,108,0.2); color: var(--partial); }
+
+.legend {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1rem;
+  font-size: 0.8rem; color: var(--muted); margin: 0.75rem 0 1.25rem;
+  padding: 0.65rem 0.85rem; background: var(--navy); border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  margin: 1rem 0;
+}
+.card.accent { border-color: var(--amber-line); background: linear-gradient(135deg, var(--card), rgba(232,165,75,0.06)); }
+blockquote {
+  margin: 0.9rem 0; padding: 0.75rem 1rem;
+  border-left: 3px solid var(--amber);
+  background: var(--amber-soft);
+  color: var(--text); font-size: 0.92rem; font-style: italic;
+}
+blockquote cite { display: block; margin-top: 0.4rem; font-style: normal; font-size: 0.78rem; color: var(--muted); font-family: "IBM Plex Mono", monospace; }
+
+/* Tables */
+.scroll {
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  margin: 0.85rem 0 1.25rem;
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--navy);
+}
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.84rem;
+  min-width: 560px;
+}
+th, td {
+  padding: 0.55rem 0.75rem; text-align: left;
+  border-bottom: 1px solid var(--border); vertical-align: top;
+}
+th {
+  background: var(--navy-2); color: var(--amber);
+  font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+  font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  white-space: nowrap; position: sticky; top: 0;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(232,165,75,0.04); }
+td.num { font-family: "IBM Plex Mono", monospace; text-align: right; white-space: nowrap; }
+td.good { color: var(--ok); }
+td.bad { color: var(--bad); }
+td.warn { color: var(--warn); }
+
+.bullets-tight li { margin: 0.45rem 0; }
+.protocol-steps {
+  counter-reset: step;
+  list-style: none; padding-left: 0;
+}
+.protocol-steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0.75rem 0.85rem 0.75rem 3rem;
+  margin: 0.5rem 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.protocol-steps li::before {
+  content: counter(step);
+  position: absolute; left: 0.75rem; top: 0.75rem;
+  width: 1.6rem; height: 1.6rem;
+  background: var(--amber-soft); color: var(--amber);
+  border: 1px solid var(--amber-line); border-radius: 50%;
+  font-family: "IBM Plex Mono", monospace; font-size: 0.75rem;
+  font-weight: 600; display: flex; align-items: center; justify-content: center;
+}
+
+.link-grid {
+  display: grid; gap: 0.35rem 1rem;
+  grid-template-columns: 1fr;
+  font-size: 0.86rem;
+}
+@media (min-width: 640px) {
+  .link-grid { grid-template-columns: 1fr 1fr; }
+}
+.link-grid a { word-break: break-all; }
+.link-group { margin: 1.25rem 0; }
+.link-group h3 { margin-top: 0; }
+
+.footer {
+  margin-top: 3rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem; color: var(--faint);
+}
+.footer code { color: var(--muted); }
+
+.callout {
+  border: 1px solid var(--amber-line);
+  background: var(--amber-soft);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+}
+.callout strong { color: var(--amber); }
+
+.two-col {
+  display: grid; gap: 1rem;
+}
+@media (min-width: 700px) {
+  .two-col { grid-template-columns: 1fr 1fr; }
+}
+
+/* Print */
+@media print {
+  :root { --ink: #fff; --text: #111; --muted: #333; --navy: #f7f7f7; --navy-2: #eee; --card: #fafafa; --border: #ccc; --amber: #8a5a00; --amber-dim: #6b4500; --amber-soft: #fff8eb; --amber-line: #d4a84b; --ok: #0a6b4a; --bad: #8b2e22; --faint: #555; }
+  body { background: #fff; color: #111; font-size: 11pt; }
+  .nav { position: static; background: #fff; border-bottom: 2px solid #8a5a00; height: auto; padding: 0.4rem 0; }
+  .nav a { color: #333; }
+  a { color: #8a5a00; }
+  .mast { padding-top: 1rem; }
+  section { break-inside: avoid; page-break-inside: avoid; }
+  .scroll { overflow: visible; border: 1px solid #ccc; }
+  table { min-width: 0; font-size: 9pt; }
+  .tag { border: 1px solid currentColor; }
+  h2 { border-bottom-color: #8a5a00; }
+  @page { margin: 1.4cm; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Section navigation">
+  <div class="nav-inner">
+    <span class="brand">DEFENSIBLE SCORES</span>
+    <a href="#exec">Exec</a>
+    <a href="#argued">Argued</a>
+    <a href="#claim">Claim</a>
+    <a href="#lit">Literature</a>
+    <a href="#clinical">Clinical</a>
+    <a href="#corrections">Corrections</a>
+    <a href="#cot">CoT bg</a>
+    <a href="#protocol">Protocol</a>
+    <a href="#unknown">Unknown</a>
+    <a href="#links">Links</a>
+    <a href="#method">Method</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Methods · Psychometrics · LLM-as-judge</p>
+  <h1>DEFENSIBLE SCORES</h1>
+  <p class="subtitle">Bare ratings vs evidence-then-score for LLM judges</p>
+  <div class="meta-box">
+    <div><strong>For:</strong> Nathan Sanders &nbsp;·&nbsp; <strong>Date:</strong> Saturday 19 September 2026 (America/Chicago)</div>
+    <div style="margin-top:0.35rem"><strong>Origin:</strong> deep research on Nathan’s Grok share
+      <a href="https://grok.com/share/bGVnYWN5LWNvcHk_e6aa03ca-eee0-45a9-b96d-7d80ea172fec">grok.com/share/…e6aa03ca…</a>
+    </div>
+    <div class="warn-line">⚠ Share title “LLMs Gain Accuracy from Extended Context” is misleading. The live claim is score format / defensible scores — not “longer context ⇒ accuracy.”</div>
+  </div>
+</header>
+
+<div class="legend" role="note">
+  <span><span class="tag tag-v">verified</span> fact checked against PDF/HTML this pass</span>
+  <span><span class="tag tag-o">Grok overstated</span> directionally related, claim too strong</span>
+  <span><span class="tag tag-m">author misnamed</span> Grok wrong author attribution</span>
+  <span><span class="tag tag-f">fetch limited</span> primary PDF blocked / secondary only</span>
+  <span><span class="tag tag-p">partial</span> accurate only under stated scope</span>
+</div>
+
+<!-- 1. EXECUTIVE BRIEF -->
+<section id="exec">
+  <h2>1. Executive brief</h2>
+  <ul class="bullets-tight">
+    <li><strong>What Nathan can defend:</strong> Score-only LLM judgments are a weak protocol. Requiring analysis or explanation with the rating improves correlation with human ratings on NLG meta-eval; structured evidence-then-score is a different (and safer) intervention than unconstrained free-form CoT. Consistency is not validity. <span class="tag tag-v">verified</span></li>
+    <li><strong>Best single footnote:</strong> Chiang &amp; Lee, Findings of EMNLP 2023, <a href="https://arxiv.org/abs/2310.05657">arXiv:2310.05657</a> — numeric-only “suboptimal”; analyze-rate / rate-explain beat or match score-only; auto-CoT scaffolding does not reliably help. <span class="tag tag-v">verified</span></li>
+    <li><strong>Grok author misnames:</strong> “Öncel et al.” → <strong>Shakur et al.</strong> (<a href="https://arxiv.org/abs/2410.12858">2410.12858</a>); “Holden et al.” → <strong>Geathers et al.</strong> (<a href="https://arxiv.org/abs/2501.13957">2501.13957</a>). <span class="tag tag-m">author misnamed</span></li>
+    <li><strong>Consistency ≠ validity:</strong> Tiwari 2026 — local judges 97.3% / 92.3% exact self-consistency vs Pearson <em>r</em> 0.275 / 0.340 with humans. Geathers GPT-4o Krippendorff’s α = 0.98 at T=0 with low exact accuracy (0.27–0.44). <span class="tag tag-v">verified</span></li>
+    <li><strong>Recommended protocol:</strong> observations (with transcript spans) → map to published rubric anchors → derive score as a function of the map → human audit of the mapping (not self-consistency alone). <span class="tag tag-v">verified</span> as synthesis of Shakur + QAA + classic oral standards — not a named MeSH finding.</li>
+  </ul>
+  <div class="callout">
+    <strong>Talking sentence:</strong> Chiang and Lee (2023) show that score-only LLM ratings underperform the same judge when it must rationalize the rating; the number alone is a weaker evaluation protocol. The gain is from constraining the rating with evidence — not from longer context as such.
+  </div>
+</section>
+
+<!-- 2. WHAT GROK ARGUED -->
+<section id="argued">
+  <h2>2. What the Grok conversation actually argued</h2>
+  <p>Source: <a href="https://grok.com/share/bGVnYWN5LWNvcHk_e6aa03ca-eee0-45a9-b96d-7d80ea172fec">shared conversation</a> (title on the share page is misleading; see masthead).</p>
+  <h3>User’s opening intuition</h3>
+  <p>Chain of thought improved LLMs because next-word prediction is more “accurate” with larger context. For oral-exam scoring, a bare <code>case 232: 3</code> is “harder / more variable” than generating a rationale along with the score.</p>
+  <h3>Grok’s first reply (faithful summary)</h3>
+  <ul>
+    <li>The intuition is useful; the mechanism is underspecified; the exam-scoring leap mixes two phenomena.</li>
+    <li>A bare label is a high-entropy next token; after a rubric-shaped rationale, <code>P(score | case, rationale)</code> is usually sharper — an information-theoretic fact about intermediate tokens reducing uncertainty.</li>
+    <li>CoT is <em>not</em> “larger context”: extra serial compute, content of tokens, decomposition into easier local predictions, and training-data geometry matter more.</li>
+    <li>In oral scoring, rationale regularizes, selects features (first deficiency can anchor), and can create an appearance of process. <strong>Consistency is not validity.</strong></li>
+    <li>Useful version: extract observations → map to rubric anchors → derive rating → audit the mapping. That is process supervision plus a contract — not “give it more context.”</li>
+  </ul>
+  <h3>Second exchange</h3>
+  <p>User: CoT origin story can be skipped. Ask for citable papers. Grok: drop CoT-origin; claim is bare rating vs evidence-then-rating. Best cite Chiang &amp; Lee; support from G-Eval, MT-Bench, Prometheus; clinical Öncel/Holden (misnamed — see §6); caveats Tiwari + OpenReview “Rethinking LLM Judges.”</p>
+  <h3>Mental note</h3>
+  <p>User: “defensible scores.” Third Grok reply was interrupted; no further text on the share.</p>
+</section>
+
+<!-- 3. THE CLAIM TIGHTENED -->
+<section id="claim">
+  <h2>3. The claim, tightened</h2>
+  <div class="card accent">
+    <p style="margin:0"><strong>Defensible restatement (from Grok, largely supportable):</strong></p>
+    <p>Score-only LLM judgments are a weak protocol. Chiang and Lee (2023) find that requiring a rationale with the rating improves human correlation and that numeric-only output is suboptimal; G-Eval (Liu et al., 2023) independently shows discrete score tokens can concentrate on one digit (e.g. 3 on a 1–5 scale). Evaluator models such as Prometheus are trained to emit rubric-grounded feedback before a score (Kim et al., 2024). The gain is from constraining the rating with evidence, not from longer context as such. Unstructured free-form reasoning can add variance rather than remove it.</p>
+  </div>
+  <h3>Chiang &amp; Lee guideline (verbatim direction)</h3>
+  <blockquote>
+    “Always ask ChatGPT to explain/analyze when rating.” “Using auto CoT is optional since it does not always lead to higher correlations.”
+    <cite>— Chiang &amp; Lee 2023 · <span class="tag tag-v">verified</span></cite>
+  </blockquote>
+  <blockquote>
+    “forcing the LLM to output only a numeric rating, as in G-Eval, is suboptimal.”
+    <cite>— Chiang &amp; Lee 2023 · <span class="tag tag-v">verified</span></cite>
+  </blockquote>
+  <p><strong>Nuance Nathan should keep:</strong> Chiang finds rate-explain (score <em>before</em> rationale) ≈ analyze-rate; neither significantly better than the other. So “rationale-then-score uniquely wins over score-then-rationale” is <span class="tag tag-o">Grok overstated</span> relative to Chiang. Permission / requirement to explain still beats bare score-only.</p>
+</section>
+
+<!-- 4. CORE LITERATURE -->
+<section id="lit">
+  <h2>4. Core literature verified</h2>
+
+  <h3>4.1 Chiang &amp; Lee 2023 — best cite</h3>
+  <p><em>A Closer Look into Automatic Evaluation Using Large Language Models</em> (ACL title variant: “…Using Large Language Models for Automatic Evaluation”). Cheng-Han Chiang, Hung-yi Lee. Findings of EMNLP 2023, pp. 8928–8942.
+    <a href="https://arxiv.org/abs/2310.05657">arXiv:2310.05657</a> ·
+    <a href="https://arxiv.org/pdf/2310.05657">PDF</a> ·
+    <a href="https://aclanthology.org/2023.findings-emnlp.599/">ACL Anthology</a> ·
+    DOI <a href="https://doi.org/10.18653/v1/2023.findings-emnlp.599">10.18653/v1/2023.findings-emnlp.599</a>
+    <span class="tag tag-v">verified</span></p>
+  <p>Meta-eval of ChatGPT (<code>gpt-3.5-turbo-0613</code>) vs humans on SummEval and Topical-Chat; Pearson <em>r</em> and Kendall’s <em>τ</em>; <em>N</em>=20 samples averaged.</p>
+
+  <h4>SummEval Pearson <em>r</em> (Table 1, ChatGPT)</h4>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th>Protocol</th><th>Coherence</th><th>Consistency</th><th>Fluency</th><th>Relevance</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Auto-CoT + score only (G-Eval-style)</td><td class="num">0.45</td><td class="num">0.37</td><td class="num">0.319</td><td class="num">0.403</td></tr>
+      <tr><td>Score only (no auto-CoT)</td><td class="num">0.344</td><td class="num">0.328</td><td class="num">0.361</td><td class="num">0.353</td></tr>
+      <tr><td>Free text</td><td class="num">0.46</td><td class="num">0.476</td><td class="num">0.477</td><td class="num">0.324</td></tr>
+      <tr><td>Rate-explain</td><td class="num">0.557</td><td class="num">0.473</td><td class="num">0.451</td><td class="num">0.509</td></tr>
+      <tr><td>Analyze-rate</td><td class="num good"><strong>0.635</strong></td><td class="num good"><strong>0.537</strong></td><td class="num">0.479</td><td class="num">0.444</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h4>Topical-Chat Pearson <em>r</em> (Table 2, no auto-CoT)</h4>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th>Protocol</th><th>Naturalness</th><th>Coherence</th><th>Engagingness</th><th>Groundedness</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Score only</td><td class="num">0.408</td><td class="num">0.443</td><td class="num">0.557</td><td class="num">0.358</td></tr>
+      <tr><td>Rate-explain</td><td class="num">0.524</td><td class="num">0.477</td><td class="num">0.567</td><td class="num">0.58</td></tr>
+      <tr><td>Analyze-rate</td><td class="num">0.573</td><td class="num">0.486</td><td class="num">0.628</td><td class="num good"><strong>0.725</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Headline deltas: SummEval coherence 0.344 → 0.635 (analyze-rate); Topical-Chat groundedness 0.358 → 0.725. <span class="tag tag-v">verified</span></p>
+  <p><strong>Limitations:</strong> ChatGPT only; NLG meta-eval, not oral/clinical; improves correlation with humans, not psychometric validity of high-stakes scores.</p>
+
+  <h3>4.2 Liu et al. G-Eval — partial (midpoint / digit dominance)</h3>
+  <p><em>G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment.</em> EMNLP 2023 main, pp. 2511–2522.
+    <a href="https://arxiv.org/abs/2303.16634">arXiv:2303.16634</a> ·
+    <a href="https://aclanthology.org/2023.emnlp-main.153/">ACL</a> ·
+    DOI <a href="https://doi.org/10.18653/v1/2023.emnlp-main.153">10.18653/v1/2023.emnlp-main.153</a>
+    <span class="tag tag-v">verified</span> PDF · <span class="tag tag-p">partial</span> as “midpoint collapse law”</p>
+  <ul>
+    <li>G-Eval-4 average Spearman ρ = <strong>0.514</strong> on SummEval (Table 1); with CoT beats −CoT (AVG ρ 0.514 vs 0.500).</li>
+    <li>Quote: “For some evaluation tasks, one digit usually dominates the distribution of the scores, such as 3 for a 1 - 5 scale.” Motivates probability-weighted score \(\sum_i p(s_i)\, s_i\).</li>
+    <li>Also: LLMs usually output integer scores even when decimals requested → many ties.</li>
+    <li>Grok “collapse toward the scale midpoint” as a general law: <span class="tag tag-o">Grok overstated</span> — paper reports dominance of <em>one digit</em> (illustrated by 3), not a quantified multi-scale midpoint experiment.</li>
+    <li>Note conflict: Chiang finds auto-CoT not always helpful for ChatGPT; G-Eval’s own CoT ablation helps GPT-4 on SummEval.</li>
+    <li>Flagged low human IAA in one setting: Krippendorff’s α = 0.07.</li>
+  </ul>
+
+  <h3>4.3 Zheng et al. MT-Bench — partial</h3>
+  <p><em>Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.</em> NeurIPS 2023 Datasets and Benchmarks.
+    <a href="https://arxiv.org/abs/2306.05685">arXiv:2306.05685</a> ·
+    <a href="https://arxiv.org/pdf/2306.05685">PDF</a>
+    <span class="tag tag-v">verified</span> · <span class="tag tag-p">partial</span> for Likert rationale format</p>
+  <p>GPT-4–human agreement ≈ &gt;80% (ballpark of human–human) on MT-Bench / Arena. Main result is pairwise preference, not numeric-only vs rationale ablation.</p>
+  <h4>Math grading failure rates (Table 4; failure = GPT-4 says incorrect answer is correct)</h4>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Prompt</th><th>Failures</th></tr></thead>
+    <tbody>
+      <tr><td>Default</td><td class="num bad"><strong>14/20 (70%)</strong></td></tr>
+      <tr><td>CoT (answer independently, then grade)</td><td class="num warn"><strong>6/20 (30%)</strong></td></tr>
+      <tr><td>Reference-guided</td><td class="num good"><strong>3/20 (15%)</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Big math win is <strong>reference-guided</strong>, not free CoT. Single-answer grading is a named protocol (what <code>case 232: 3</code> is). <span class="tag tag-o">Grok overstated</span> if cited as direct evidence-then-score Likert support.</p>
+
+  <h3>4.4 Kim et al. Prometheus — training format</h3>
+  <p><em>Prometheus: Inducing Fine-grained Evaluation Capability in Language Models.</em> ICLR 2024.
+    <a href="https://arxiv.org/abs/2310.08491">arXiv:2310.08491</a> ·
+    <a href="https://kaistai.github.io/prometheus/">project page</a>
+    <span class="tag tag-v">verified</span></p>
+  <ul>
+    <li>Feedback Collection: 1K rubrics, 20K instructions, 100K GPT-4 (response, feedback, score) tuples.</li>
+    <li>Training target: <strong>feedback (rationale) + integer score 1–5</strong> given instruction, response, rubric, reference.</li>
+    <li>Pearson <strong>0.897</strong> with humans on 45 customized rubrics (GPT-4 0.882; ChatGPT 0.392).</li>
+    <li>Accurate that serious evaluators are <em>trained</em> for rubric-grounded feedback-then-score; <strong>not</strong> a score-only vs rationale ablation of a frozen judge. <span class="tag tag-p">partial</span> as causal proof of format.</li>
+  </ul>
+
+  <h3>4.5 Tiwari 2026 — consistency ≠ human agreement</h3>
+  <p><em>When Consistency Does Not Mean Reliability: Evaluating Local LLM Judges Against Human Ratings.</em> Aakash Kumar Tiwari. arXiv preprint 12 Sep 2026.
+    <a href="https://arxiv.org/abs/2609.13824">arXiv:2609.13824</a> ·
+    <a href="https://arxiv.org/pdf/2609.13824">PDF</a>
+    <span class="tag tag-v">verified</span></p>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th>Metric (overall, Table 3)</th><th>LLaMA-3-8B</th><th>Qwen2.5-7B</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Pearson <em>r</em></td><td class="num">0.275 [0.145, 0.405]</td><td class="num">0.340 [0.178, 0.491]</td></tr>
+      <tr><td>Spearman</td><td class="num">0.258</td><td class="num">0.303</td></tr>
+      <tr><td>MAE</td><td class="num">27.71</td><td class="num">18.64</td></tr>
+      <tr><td>Signed bias</td><td class="num">+23.04</td><td class="num">+9.54</td></tr>
+      <tr><td>Exact self-consistency (3 repeats)</td><td class="num">97.3%</td><td class="num">92.3%</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <blockquote>
+    “high self-consistency does not necessarily indicate high agreement with human judgments.”
+    <cite>— Tiwari 2026 · <span class="tag tag-v">verified</span></cite>
+  </blockquote>
+  <p>Scope: 300 GPT-2 (124M) responses; 9 human annotators (0–100); local 7–8B judges. Narrower than a general GPT-4 claim.</p>
+
+  <h3>4.6 OpenReview “Rethinking LLM Judges” — fetch limited</h3>
+  <p><em>Rethinking LLM Judges: Chain-of-Thought and Multi-Step Pipelines for Math Grading.</em> Eric Chen, Aryan Gulati, Brando Miranda, Zeyu Tang, Sanmi Koyejo. ICLR 2026 Workshop on Logical Reasoning of LLMs.
+    <a href="https://openreview.net/forum?id=vdXPorr099">OpenReview forum</a> ·
+    <a href="https://openreview.net/pdf?id=vdXPorr099">PDF link</a> ·
+    <a href="https://iclr.cc/virtual/2026/10017403">ICLR virtual</a>
+    <span class="tag tag-f">fetch limited</span> — Cloudflare 403 on primary PDF</p>
+  <ul>
+    <li>Secondary / abstract claims: unconstrained CoT “often increases score variance”; structured CoT / comparative prompting outperform direct scoring; multi-step pipelines often underperform simpler structured single-pass methods.</li>
+    <li><strong>Do not cite numeric deltas</strong> (e.g. any “76 points”) until primary PDF is obtained. Directionally matches Grok; numbers unverified this pass.</li>
+  </ul>
+
+  <h3>4.7 Xu et al. arXiv:2606.02020 — entropy dynamics (not a score-format cite)</h3>
+  <p><em>Unveiling the Entropy Dynamics of Chain-of-Thought Reasoning.</em> Accepted ICML 2026.
+    <a href="https://arxiv.org/abs/2606.02020">arXiv:2606.02020</a> ·
+    <a href="https://arxiv.org/html/2606.02020v1">HTML</a>
+    <span class="tag tag-v">verified</span> PDF · <span class="tag tag-p">partial</span> / wrong as judge-protocol cite</p>
+  <ul>
+    <li>Two-phase pattern: high-entropy Uncertainty Region → low-entropy Confidence Region along CoT.</li>
+    <li>CUSUM early-exit: <strong>63.06%</strong> accuracy with <strong>11.1%</strong> token reduction — inference control, not judge format.</li>
+    <li>Supports general info-theoretic story that intermediate tokens can reduce answer uncertainty; does <strong>not</strong> measure score-only vs rationale judging.</li>
+  </ul>
+
+  <h3>4.8 Claim-by-claim accuracy of Grok’s tight claim</h3>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th>Claim</th><th>Paper</th><th>Verdict</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Score-only is a weak protocol</td><td>Chiang &amp; Lee</td><td class="good">Accurate</td></tr>
+      <tr><td>Rationale improves human correlation</td><td>Chiang &amp; Lee</td><td class="good">Accurate</td></tr>
+      <tr><td>Numeric-only suboptimal</td><td>Chiang &amp; Lee</td><td class="good">Accurate</td></tr>
+      <tr><td>Discrete tokens collapse to midpoint</td><td>G-Eval</td><td class="warn">Partial</td></tr>
+      <tr><td>Prometheus = feedback before score</td><td>Kim et al.</td><td class="good">Accurate</td></tr>
+      <tr><td>Gain = evidence constraint, not longer context</td><td>Chiang + framing</td><td class="warn">Partial</td></tr>
+      <tr><td>Unstructured CoT can add variance</td><td>OpenReview vdXPorr099</td><td class="warn">Partial (PDF blocked)</td></tr>
+      <tr><td>Auto-CoT unreliable; attached rationale helps</td><td>Chiang &amp; Lee</td><td class="good">Accurate</td></tr>
+      <tr><td>Self-consistent yet disagree with humans</td><td>Tiwari</td><td class="good">Accurate</td></tr>
+      <tr><td>Intermediate tokens reduce answer entropy</td><td>Xu et al. 2606.02020</td><td class="warn">Partial (not judge)</td></tr>
+      <tr><td>MT-Bench: answer-then-grade helps reasoning</td><td>Zheng et al.</td><td class="warn">Partial</td></tr>
+      <tr><td>Rationale-then-score &gt; score-then-rationale</td><td>Chiang &amp; Lee</td><td class="bad">Wrong / overstated</td></tr>
+      <tr><td>Best footnote = Chiang &amp; Lee</td><td>—</td><td class="good">Accurate</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- 5. CLINICAL / OSCE -->
+<section id="clinical">
+  <h2>5. Clinical / OSCE transfer</h2>
+  <p>Bottom line: extract→rationale→score is real (Shakur). High self-consistency at T=0 is real (Geathers). <strong>Neither proves</strong> rationale-first always improves human validity over bare scores on multi-item ordinal rubrics.</p>
+
+  <h3>5.1 Shakur et al. 2024 — κ = 0.88 on one binary item</h3>
+  <p><span class="tag tag-m">author misnamed</span> Grok said “Öncel et al.” Actual authors: Ameer Hamza Shakur, Michael J. Holcomb, David Hein, S. Kang, T.O. Dalton, K.K. Campbell, D.J. Scott, Andrew R. Jamieson.
+    <em>Large Language Models for Medical OSCE Assessment: A Novel Approach to Transcript Analysis.</em>
+    <a href="https://arxiv.org/abs/2410.12858">arXiv:2410.12858</a> ·
+    <a href="https://ar5iv.labs.arxiv.org/html/2410.12858">ar5iv HTML</a>
+    <span class="tag tag-v">verified</span></p>
+  <ul>
+    <li><strong>N:</strong> 2,027 video-recorded OSCE encounters, UTSW, 2019–2022.</li>
+    <li><strong>ASR:</strong> Whisper-v3. Audio discard ~2%.</li>
+    <li><strong>Target:</strong> single binary communication item — <em>did the student summarize the patient’s medical history?</em></li>
+    <li><strong>Protocol:</strong> extract statement (transcript span) → rationale vs rubric → score → JSON.</li>
+  </ul>
+  <h4>Table 4 headline (years after 2020)</h4>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Model</th><th>Accuracy (%)</th><th>F1</th><th>Cohen’s κ</th></tr></thead>
+    <tbody>
+      <tr><td>GPT-4 (01-25)</td><td class="num">95.7</td><td class="num">0.95</td><td class="num good"><strong>0.88</strong></td></tr>
+      <tr><td>Claude Sonnet 3.5</td><td class="num">93.6</td><td class="num">0.94</td><td class="num">0.86</td></tr>
+      <tr><td>Claude Opus</td><td class="num">93.3</td><td class="num">0.93</td><td class="num">0.85</td></tr>
+      <tr><td>Llama-3-70B</td><td class="num">93.2</td><td class="num">0.93</td><td class="num">0.83</td></tr>
+      <tr><td>GPT-4o</td><td class="num">92.1</td><td class="num">0.89</td><td class="num">0.81</td></tr>
+      <tr><td>GPT-3.5</td><td class="num">75.0</td><td class="num">0.75</td><td class="num">0.35</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <ul>
+    <li>Year effect: 2019–2020 κ roughly 0.42–0.61; 2021–2022 up to 0.88. Treat 0.88 as <strong>post-2020</strong>, not whole-cohort. <span class="tag tag-v">verified</span></li>
+    <li>Four-model agreement ensemble → κ 0.952, accuracy 98.1% (lower coverage).</li>
+    <li>RAG underperformed full-transcript (SetFit κ 0.62; LLM-on-chunks κ 0.56 vs GPT-4 full-transcript 0.88).</li>
+    <li>Authors recommend hybrid LLM first-pass + human review — augment, not replace.</li>
+    <li><strong>No score-only ablation</strong> in this paper; does not generalize to multi-domain high-stakes oral boards.</li>
+  </ul>
+
+  <h3>5.2 Geathers et al. 2025 — MIRS caution</h3>
+  <p><span class="tag tag-m">author misnamed</span> Grok said “Holden et al.” Actual authors: Geathers, Hicke, Chan, Rajashekar, Young, Sewell, Cornes, Kizilcec, Shung.
+    <em>Benchmarking Generative AI for Scoring Medical Student Interviews in OSCEs.</em>
+    <a href="https://arxiv.org/abs/2501.13957">arXiv:2501.13957</a> ·
+    <a href="https://arxiv.org/html/2501.13957v2">HTML v2</a> ·
+    <a href="https://github.com/YannHicke/MedEd/tree/main/code/evaluation/prompts">prompts (GitHub)</a>
+    <span class="tag tag-v">verified</span></p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Finding</th><th>Number</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Exact accuracy</td><td class="num">0.27–0.44</td><td>abstract; body up to 0.52 (Claude)</td></tr>
+      <tr><td>Off-by-one accuracy</td><td class="num">0.67–0.87</td><td>body 0.67–0.91</td></tr>
+      <tr><td>Thresholded accuracy</td><td class="num">0.75–0.88</td><td>body 0.75–0.91; triage utility</td></tr>
+      <tr><td>GPT-4o intra-rater @ T=0</td><td class="num good"><strong>Krippendorff’s α = 0.98</strong></td><td>5 zero-shot runs as raters — not Cronbach’s</td></tr>
+      <tr><td>Gemini multimodal non-text MIRS</td><td class="num bad">α −0.47</td><td>failure on pacing / non-verbal</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <ul>
+    <li>28 MIRS items, 5-point anchors at 1/3/5; 10 OSCE cases; 174 expert-consensus scored items; T=0.</li>
+    <li>§4.1: “Surprisingly, CoT, few-shot, and multi-step techniques <strong>did not improve</strong> performance over the zero-shot baseline.” Multi-step often weak (missed spans on holistic items).</li>
+    <li>Per-item oracle (best technique per item) improves agreement — authors flag as theoretical upper bound on same eval set.</li>
+    <li>Grok “CoT helps some items not all” is fair at conclusion level, <strong>not</strong> “CoT uniformly wins.” <span class="tag tag-p">partial</span></li>
+  </ul>
+
+  <h3>5.3 Holcomb / adjacent clinical notes</h3>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Paper</th><th>What scored</th><th>Key numbers</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Holcomb et al., <em>Rubrics to Prompts…</em> <a href="https://doi.org/10.1056/AIcs2400631">NEJM AI</a></td>
+        <td>Post-encounter notes (not live oral speech)</td>
+        <td>Retrospective up to 89.7% item agreement, Cohen’s κ <strong>0.79</strong>, Spearman <strong>0.86</strong>; prospective 245 students, ~91% human-effort reduction. Same UTSW ecosystem.</td>
+      </tr>
+      <tr>
+        <td>Holcomb / Jamieson multimodal PE <a href="https://www.medrxiv.org/content/10.1101/2024.06.05.24308467">medRxiv</a></td>
+        <td>Physical-exam video</td>
+        <td>Agreement 26%–83% by setup; transcript/signposting often beat image-only.</td>
+      </tr>
+      <tr>
+        <td>Yao et al. MedQA-CS <a href="https://arxiv.org/abs/2410.01553">arXiv:2410.01553</a></td>
+        <td>LLM-as-examiner on OSCE-style tasks</td>
+        <td>GPT-4 vs experts Pearson 0.90 / 0.92 / <strong>0.47</strong> (Closure) / 0.78. Not live human orals.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>5.4 Negative / poor ICC papers (counterweight)</h3>
+  <ul>
+    <li><a href="https://formative.jmir.org/2025/1/e79465">JMIR Formative 2025</a> (Japan; ChatGPT-4 vs physicians, n=11): ChatGPT-4 higher on several domains; <strong>ICC with physicians near 0 / poor</strong> overall (reported ICCs include ~0.000 total; domain ICCs from negative/near-zero to ~0.36). <span class="tag tag-v">verified</span> as reported in source notes.</li>
+    <li><a href="https://doi.org/10.1186/s12909-025-07241-4">BMC Med Educ 2025</a> (Turkey; ChatGPT-4o &amp; Gemini on procedural videos): AI systematically higher than humans; human–AI inter-rater often not consistent across criteria. Procedural OSCE ≠ oral reasoning board.
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12046780/">PMC</a></li>
+  </ul>
+
+  <h3>5.5 Transfer to ABPMR-style orals — what not to claim</h3>
+  <ul>
+    <li>Do <strong>not</strong> claim GPT-4 κ=0.88 on history-summary implies similar κ on ABPMR oral domains.</li>
+    <li>Do <strong>not</strong> claim α=0.98 intra-rater implies valid board scores.</li>
+    <li>Do <strong>not</strong> claim rationale-first always beats score-only on ordinal multi-item clinical rubrics (Geathers contradicts blanket CoT).</li>
+    <li>Published LLM κ on <em>scoring human board candidates</em> for physiatry orals: essentially absent.</li>
+  </ul>
+</section>
+
+<!-- 6. CORRECTIONS -->
+<section id="corrections">
+  <h2>6. Corrections to Grok</h2>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th>Grok said</th><th>Correction</th><th>Tag</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>“Öncel et al. 2024” for arXiv:2410.12858</td>
+        <td><strong>Shakur et al.</strong> (Shakur, Holcomb, Hein, Kang, Dalton, Campbell, Scott, Jamieson). No Öncel OSCE paper on arXiv.</td>
+        <td><span class="tag tag-m">author misnamed</span></td>
+      </tr>
+      <tr>
+        <td>“Holden et al. 2025” for arXiv:2501.13957</td>
+        <td><strong>Geathers et al.</strong> (Geathers, Hicke, Chan, Rajashekar, Young, Sewell, Cornes, Kizilcec, Shung).</td>
+        <td><span class="tag tag-m">author misnamed</span></td>
+      </tr>
+      <tr>
+        <td>κ=0.88 as if full OSCE / oral board</td>
+        <td>One binary communication item (history summary), post-2020 subset, UTSW transcripts.</td>
+        <td><span class="tag tag-o">Grok overstated</span> on scope</td>
+      </tr>
+      <tr>
+        <td>α=0.98 as “intra-rater reliability”</td>
+        <td>Correct number; specify <strong>Krippendorff’s α</strong>, GPT-4o, T=0, 5 zero-shot repeats — not Cronbach’s.</td>
+        <td><span class="tag tag-v">verified</span> with precision</td>
+      </tr>
+      <tr>
+        <td>“CoT helps some items, not all” (Holden/Geathers)</td>
+        <td>Uniform CoT/few-shot/multi-step did <em>not</em> beat zero-shot overall; “helps some” only via per-item oracle (optimistic).</td>
+        <td><span class="tag tag-p">partial</span></td>
+      </tr>
+      <tr>
+        <td>Rationale-then-score better than score-then-rationale</td>
+        <td>Chiang: rate-explain ≈ analyze-rate; neither significantly better.</td>
+        <td><span class="tag tag-o">Grok overstated</span></td>
+      </tr>
+      <tr>
+        <td>Score tokens “collapse toward the scale midpoint”</td>
+        <td>G-Eval: one digit often dominates, <em>such as</em> 3 — not a proven midpoint law.</td>
+        <td><span class="tag tag-o">Grok overstated</span></td>
+      </tr>
+      <tr>
+        <td>Cite 2606.02020 for bare-rating weakness</td>
+        <td>Entropy CoT dynamics paper; not a judge score-format result.</td>
+        <td><span class="tag tag-o">Grok overstated</span></td>
+      </tr>
+      <tr>
+        <td>OpenReview unconstrained CoT raises variance (as hard cite)</td>
+        <td>Directionally plausible from abstract/secondary; primary PDF fetch failed.</td>
+        <td><span class="tag tag-f">fetch limited</span></td>
+      </tr>
+      <tr>
+        <td>Share title / “extended context” framing</td>
+        <td>Misleading vs live claim (score format / defensible scores).</td>
+        <td>framing error</td>
+      </tr>
+      <tr>
+        <td>“Defensible scores” as if published construct</td>
+        <td>Nathan’s protocol language; synthesis of Shakur + QAA + classic oral standards — not a MeSH term or single-paper finding.</td>
+        <td>citation hygiene</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- 7. CoT BACKGROUND -->
+<section id="cot">
+  <h2>7. CoT vs “larger context” — background only</h2>
+  <div class="callout">
+    <strong>NOT the main claim.</strong> Track (A) is score-format / evidence-then-rating. This section is track (B) mechanism background so the two stay separate. CoT-origin lore can be skipped when talking about defensible scores.
+  </div>
+  <p>Slogan under check: “CoT worked because next-word prediction is more accurate with larger context.” <strong>Wrong as a causal story.</strong></p>
+  <div class="two-col">
+    <div class="card">
+      <h4 style="margin-top:0;color:var(--amber)">Passive context length</h4>
+      <p style="margin:0;font-size:0.9rem">How much the model <em>reads</em>. Attention over a longer prefix. Can <strong>hurt</strong> even with perfect retrieval (Du et al., Findings of EMNLP 2025: ~13.9%–85% relative degradation).
+        <a href="https://arxiv.org/abs/2510.05381">arXiv:2510.05381</a> ·
+        <a href="https://aclanthology.org/2025.findings-emnlp.1264/">Anthology</a></p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0;color:var(--amber)">Generated CoT length</h4>
+      <p style="margin:0;font-size:0.9rem">How much serial <em>work</em> the model is allowed to <em>write</em>. Extra forward passes + scratchpad. Expressivity scales with intermediate steps <em>t(n)</em> (Merrill &amp; Sabharwal; Li et al.).</p>
+    </div>
+  </div>
+  <ul>
+    <li><strong>Wei et al. 2022</strong> <a href="https://arxiv.org/abs/2201.11903">arXiv:2201.11903</a>: variable-compute dots ≈ baseline (~6.4% vs ~6.5% standard on GSM8K approx.); thought-after-answer ≈ baseline; full CoT ~14.3%. Contentful pre-answer steps matter. <span class="tag tag-v">verified</span> from mechanism note.</li>
+    <li><strong>Pfau et al. 2024</strong> <a href="https://arxiv.org/abs/2404.15758">arXiv:2404.15758</a>: fillers can help as <em>trained compute slots</em> on some parallelizable tasks — still not “passive context accuracy.”</li>
+    <li><strong>Merrill &amp; Sabharwal</strong> <a href="https://arxiv.org/abs/2310.07923">arXiv:2310.07923</a>; <strong>Li et al.</strong> <a href="https://arxiv.org/abs/2402.12875">arXiv:2402.12875</a>: serial depth / scratchpad expressivity.</li>
+    <li><strong>Quanta</strong> (Brubaker, 21 Mar 2024): <a href="https://www.quantamagazine.org/how-chain-of-thought-reasoning-helps-neural-networks-compute-20240321/">How CoT Helps Neural Networks Compute</a> — accessible serial-compute framing.</li>
+  </ul>
+  <p>Oral-scoring analogy (clarity only): a bare score token after a long transcript is a high-entropy global prediction; structured evidence→rubric→score is closer to <strong>decomposition of the judge’s own output</strong>, not stuffing more transcript into context.</p>
+</section>
+
+<!-- 8. PROTOCOL -->
+<section id="protocol">
+  <h2>8. Recommended protocol for oral-exam-like scoring</h2>
+  <p>Research / pilot design — <strong>not</strong> a certification standard. Matches Nathan’s “defensible” framing while staying faithful to what papers support.</p>
+
+  <h3>Inputs</h3>
+  <ul>
+    <li>High-quality audio → ASR with QC (Shakur ~2% discard lesson).</li>
+    <li>Published <strong>analytic</strong> rubric with observable anchors (behaviorally worded 1–5 or binary).</li>
+    <li>Blueprint mapping oral competencies → items (content validity separate from LLM agreement).</li>
+  </ul>
+
+  <h3>Model output contract (per rubric item)</h3>
+  <ol class="protocol-steps">
+    <li><strong>observations[]</strong> — atomic claims, each with <code>transcript_span</code> (quote + timestamp if available). Inventory of positive <em>and</em> negative evidence — not only the first deficiency (anchoring risk).</li>
+    <li><strong>anchor_map</strong> — for each observation, which published anchor level it supports (or “insufficient evidence”).</li>
+    <li><strong>derived_score</strong> — deterministic rule or constrained choice <em>from the filled map</em> (score is a function of the map, not a free token).</li>
+    <li><strong>confidence / flags</strong> — missing audio, conflicting spans, out-of-rubric content, possible ASR error.</li>
+    <li>Optional separate <strong>feedback_text</strong> for learners — do not let feedback narrative rewrite the score.</li>
+  </ol>
+
+  <h3>Decoding &amp; aggregation</h3>
+  <ul>
+    <li>Primary: <strong>T=0</strong> (or low T); log model version + prompt hash.</li>
+    <li>Optional: small sample at T&gt;0 + mean/median for uncertainty (GEM-style), especially on soft items.</li>
+    <li>Do <strong>not</strong> show prior human or prior machine scores (anchoring literature: <a href="https://arxiv.org/pdf/2608.25869">2608.25869</a>).</li>
+  </ul>
+
+  <h3>Human audit (the “defensible” part)</h3>
+  <ul>
+    <li>Sample all fails / borderlines + random passes.</li>
+    <li>Audit <strong>mapping fidelity</strong>: do quoted spans exist? Does the anchor mapping follow the rubric text?</li>
+    <li>Track LLM–human κ / ICC / Krippendorff α <strong>per domain</strong>, not only global.</li>
+    <li>Monitor year/case/station drift (Shakur year effect).</li>
+    <li>Multimodal claim-check where physical/procedural claims matter (Rogers et al. QAA direction: <a href="https://arxiv.org/abs/2607.19063">arXiv:2607.19063</a> — error detection P 69.9% / R 76.7%; correcting errors raises factually correct transcripts 39.2% → 79.2%).</li>
+  </ul>
+
+  <h3>A/B arms for an ABPMR-adjacent pilot</h3>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Arm</th><th>Hypothesis</th></tr></thead>
+    <tbody>
+      <tr><td>Score-only</td><td>Higher entropy / worse human κ</td></tr>
+      <tr><td>Free CoT then score</td><td>May stabilize wrong features; Geathers: not uniformly better</td></tr>
+      <tr><td>Structured observations→anchors→score</td><td>Better auditability; test whether human κ rises</td></tr>
+      <tr><td>Ensemble + escalate on disagreement</td><td>Higher precision, lower coverage (Shakur ensemble pattern)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><strong>Success criteria:</strong> chance-corrected agreement with calibrated examiners; acceptable bias (Bland–Altman); stable under prompt paraphrase; documented adverse-impact check — <strong>not</strong> self-consistency alone.</p>
+</section>
+
+<!-- 9. UNKNOWN -->
+<section id="unknown">
+  <h2>9. What is still unknown / overclaim risks</h2>
+  <ul>
+    <li>Does adding a rationale improve <em>validity</em>, or merely reduce sampling variance and lock in a biased first impression?</li>
+    <li>Are cited observations faithful causes of the score, or post-hoc justifications? (Turpin et al. unfaithful CoT: <a href="https://arxiv.org/abs/2305.04388">arXiv:2305.04388</a>; Somov et al. <a href="https://arxiv.org/abs/2603.16475">Breaking the Chain</a>.)</li>
+    <li>Causal contribution of serial forward passes vs meaningful decomposition vs distribution matching — still mechanism debate, not settled for judges.</li>
+    <li>When does unconstrained CoT hurt reliability vs when structured protocol helps? OpenReview numbers <span class="tag tag-f">fetch limited</span>.</li>
+    <li>Transfer from NLG meta-eval (G-Eval, MT-Bench, Chiang) to ABPMR-style oral/clinical exams is <strong>hypothesis</strong>, not proven.</li>
+    <li>No published LLM κ on scoring human physiatry / ABPMR oral candidates against many-facet Rasch or calibrated examiner panels.</li>
+    <li>Yamauchi et al. counterweight: with clear criteria + reference, CoT ≈ direct scoring (<a href="https://arxiv.org/abs/2506.13639">arXiv:2506.13639</a> · <a href="https://aclanthology.org/2026.gem-main.19/">GEM 2026</a>) — does not refute Chiang on weak/no-rubric NLG settings.</li>
+    <li>Hong et al. Rulers (<a href="https://arxiv.org/abs/2601.08654">arXiv:2601.08654</a>) and Tapwal et al. Proof-Before-Preference (<a href="https://arxiv.org/abs/2605.23970">arXiv:2605.23970</a>) are closest “evidence-locking” engineering cousins — verify full-PDF numbers before hard citation.</li>
+  </ul>
+  <div class="callout">
+    <strong>Overclaim risks:</strong> Do not call this AGI. Do not invent psychometrics. Do not equate self-consistency with validity. Do not treat κ=0.88 or α=0.98 as board-ready. Do not cite “defensible scores” as if it were a published MeSH finding.
+  </div>
+</section>
+
+<!-- 10. LINKS -->
+<section id="links">
+  <h2>10. Deep-dive links</h2>
+  <p style="font-size:0.88rem;color:var(--muted)">Every major paper URL from the verified source notes, including abs/pdf/html/venue variants where the source cited them or the standard arXiv triple applies to a paper already named in those notes.</p>
+
+  <div class="link-group">
+    <h3>Primary papers — full URL inventory (abs / pdf / html / venue)</h3>
+    <div class="link-grid">
+      <a href="https://arxiv.org/abs/2310.05657">Chiang &amp; Lee abs</a>
+      <a href="https://arxiv.org/pdf/2310.05657">Chiang &amp; Lee pdf</a>
+      <a href="https://arxiv.org/html/2310.05657">Chiang &amp; Lee html</a>
+      <a href="https://aclanthology.org/2023.findings-emnlp.599/">Chiang &amp; Lee ACL</a>
+      <a href="https://doi.org/10.18653/v1/2023.findings-emnlp.599">Chiang &amp; Lee DOI</a>
+      <a href="https://arxiv.org/abs/2303.16634">G-Eval abs</a>
+      <a href="https://arxiv.org/pdf/2303.16634">G-Eval pdf</a>
+      <a href="https://arxiv.org/html/2303.16634">G-Eval html</a>
+      <a href="https://aclanthology.org/2023.emnlp-main.153/">G-Eval ACL</a>
+      <a href="https://doi.org/10.18653/v1/2023.emnlp-main.153">G-Eval DOI</a>
+      <a href="https://arxiv.org/abs/2306.05685">MT-Bench abs</a>
+      <a href="https://arxiv.org/pdf/2306.05685">MT-Bench pdf</a>
+      <a href="https://arxiv.org/html/2306.05685">MT-Bench html</a>
+      <a href="https://arxiv.org/abs/2310.08491">Prometheus abs</a>
+      <a href="https://arxiv.org/pdf/2310.08491">Prometheus pdf</a>
+      <a href="https://arxiv.org/html/2310.08491">Prometheus html</a>
+      <a href="https://kaistai.github.io/prometheus/">Prometheus project</a>
+      <a href="https://arxiv.org/abs/2609.13824">Tiwari abs</a>
+      <a href="https://arxiv.org/pdf/2609.13824">Tiwari pdf</a>
+      <a href="https://arxiv.org/html/2609.13824">Tiwari html</a>
+      <a href="https://arxiv.org/abs/2606.02020">Entropy CoT abs</a>
+      <a href="https://arxiv.org/pdf/2606.02020">Entropy CoT pdf</a>
+      <a href="https://arxiv.org/html/2606.02020v1">Entropy CoT html v1</a>
+      <a href="https://openreview.net/forum?id=vdXPorr099">OpenReview forum vdXPorr099</a>
+      <a href="https://openreview.net/pdf?id=vdXPorr099">OpenReview pdf vdXPorr099</a>
+      <a href="https://iclr.cc/virtual/2026/10017403">ICLR 2026 virtual 10017403</a>
+    </div>
+  </div>
+
+  <div class="link-group">
+    <h3>Clinical / OSCE — full inventory</h3>
+    <div class="link-grid">
+      <a href="https://arxiv.org/abs/2410.12858">Shakur OSCE abs</a>
+      <a href="https://arxiv.org/pdf/2410.12858">Shakur OSCE pdf</a>
+      <a href="https://arxiv.org/html/2410.12858">Shakur OSCE html</a>
+      <a href="https://ar5iv.labs.arxiv.org/html/2410.12858">Shakur ar5iv</a>
+      <a href="https://arxiv.org/abs/2501.13957">Geathers MIRS abs</a>
+      <a href="https://arxiv.org/pdf/2501.13957">Geathers MIRS pdf</a>
+      <a href="https://arxiv.org/html/2501.13957">Geathers MIRS html</a>
+      <a href="https://arxiv.org/html/2501.13957v2">Geathers MIRS html v2</a>
+      <a href="https://github.com/YannHicke/MedEd/tree/main/code/evaluation/prompts">Geathers MedEd prompts</a>
+      <a href="https://doi.org/10.1056/AIcs2400631">Holcomb NEJM AI DOI</a>
+      <a href="https://ai.nejm.org/doi/abs/10.1056/AIcs2400631">Holcomb NEJM AI abs</a>
+      <a href="https://www.medrxiv.org/content/10.1101/2024.06.05.24308467">Holcomb PE medRxiv</a>
+      <a href="https://arxiv.org/abs/2410.01553">MedQA-CS abs</a>
+      <a href="https://arxiv.org/pdf/2410.01553">MedQA-CS pdf</a>
+      <a href="https://arxiv.org/html/2410.01553">MedQA-CS html</a>
+      <a href="https://formative.jmir.org/2025/1/e79465">JMIR Formative e79465</a>
+      <a href="https://doi.org/10.1186/s12909-025-07241-4">BMC Med Educ DOI</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12046780/">BMC OSCE PMC12046780</a>
+      <a href="https://arxiv.org/abs/2604.08126">French OSCE abs</a>
+      <a href="https://arxiv.org/pdf/2604.08126">French OSCE pdf</a>
+      <a href="https://arxiv.org/html/2604.08126">French OSCE html</a>
+      <a href="https://arxiv.org/abs/2607.19063">QAA Rogers abs</a>
+      <a href="https://arxiv.org/pdf/2607.19063">QAA Rogers pdf</a>
+      <a href="https://arxiv.org/html/2607.19063">QAA Rogers html</a>
+      <a href="https://link.springer.com/article/10.1007/s44186-024-00303-z">ABS CE practice chatbot Springer</a>
+      <a href="https://doi.org/10.7759/cureus.87591">Cureus ophthalmology feedback</a>
+    </div>
+  </div>
+
+  <div class="link-group">
+    <h3>Psychometrics / evidence-locking / counterweights</h3>
+    <div class="link-grid">
+      <a href="https://arxiv.org/abs/2606.19544">Reliability without Validity abs</a>
+      <a href="https://arxiv.org/pdf/2606.19544">Reliability without Validity pdf</a>
+      <a href="https://arxiv.org/html/2606.19544">Reliability without Validity html</a>
+      <a href="https://arxiv.org/pdf/2608.25869">Anchoring bias LLM-judge pdf</a>
+      <a href="https://arxiv.org/abs/2608.25869">Anchoring bias abs</a>
+      <a href="https://arxiv.org/html/2608.25869">Anchoring bias html</a>
+      <a href="https://arxiv.org/abs/2607.27384">Narrative anchoring abs</a>
+      <a href="https://arxiv.org/pdf/2607.27384">Narrative anchoring pdf</a>
+      <a href="https://arxiv.org/html/2607.27384">Narrative anchoring html</a>
+      <a href="https://arxiv.org/abs/2506.13639">Yamauchi judge design abs</a>
+      <a href="https://arxiv.org/pdf/2506.13639">Yamauchi pdf</a>
+      <a href="https://arxiv.org/html/2506.13639">Yamauchi html</a>
+      <a href="https://aclanthology.org/2026.gem-main.19/">Yamauchi GEM Anthology HTML</a>
+      <a href="https://aclanthology.org/2026.gem-main.19.pdf">Yamauchi GEM Anthology PDF</a>
+      <a href="https://arxiv.org/abs/2305.04388">Turpin unfaithful CoT abs</a>
+      <a href="https://arxiv.org/pdf/2305.04388">Turpin pdf</a>
+      <a href="https://arxiv.org/html/2305.04388">Turpin html</a>
+      <a href="https://arxiv.org/abs/2601.08654">Hong Rulers abs</a>
+      <a href="https://arxiv.org/pdf/2601.08654">Hong Rulers pdf</a>
+      <a href="https://arxiv.org/html/2601.08654">Hong Rulers html</a>
+      <a href="https://arxiv.org/abs/2605.23970">Tapwal Faithful or Fabricated abs</a>
+      <a href="https://arxiv.org/pdf/2605.23970">Tapwal pdf</a>
+      <a href="https://arxiv.org/html/2605.23970">Tapwal html</a>
+      <a href="https://arxiv.org/abs/2603.16475">Somov Breaking the Chain abs</a>
+      <a href="https://arxiv.org/pdf/2603.16475">Somov pdf</a>
+      <a href="https://arxiv.org/html/2603.16475">Somov html</a>
+      <a href="https://arxiv.org/abs/2608.12097">Chen Graph-Structured Rubrics abs</a>
+      <a href="https://arxiv.org/pdf/2608.12097">Chen Graph Rubrics pdf</a>
+      <a href="https://arxiv.org/html/2608.12097">Chen Graph Rubrics html</a>
+      <a href="https://www.learnwithparam.com/blog/llm-judges-enforcing-reasoning">Learnwithparam enforcing reasoning</a>
+    </div>
+  </div>
+
+  <div class="link-group">
+    <h3>Mechanism background — full inventory (NOT main claim)</h3>
+    <div class="link-grid">
+      <a href="https://arxiv.org/abs/2201.11903">Wei et al. CoT abs</a>
+      <a href="https://arxiv.org/pdf/2201.11903">Wei et al. pdf</a>
+      <a href="https://arxiv.org/html/2201.11903">Wei et al. html</a>
+      <a href="https://arxiv.org/abs/2404.15758">Pfau filler tokens abs</a>
+      <a href="https://arxiv.org/pdf/2404.15758">Pfau pdf</a>
+      <a href="https://arxiv.org/html/2404.15758">Pfau html</a>
+      <a href="https://arxiv.org/abs/2310.07923">Merrill &amp; Sabharwal abs</a>
+      <a href="https://arxiv.org/pdf/2310.07923">Merrill &amp; Sabharwal pdf</a>
+      <a href="https://arxiv.org/html/2310.07923">Merrill &amp; Sabharwal html</a>
+      <a href="https://arxiv.org/abs/2402.12875">Li et al. serial problems abs</a>
+      <a href="https://arxiv.org/pdf/2402.12875">Li et al. pdf</a>
+      <a href="https://arxiv.org/html/2402.12875">Li et al. html</a>
+      <a href="https://arxiv.org/abs/2510.05381">Du et al. context length hurts abs</a>
+      <a href="https://arxiv.org/pdf/2510.05381">Du et al. pdf</a>
+      <a href="https://arxiv.org/html/2510.05381">Du et al. html</a>
+      <a href="https://aclanthology.org/2025.findings-emnlp.1264/">Du et al. EMNLP Findings Anthology</a>
+      <a href="https://www.quantamagazine.org/how-chain-of-thought-reasoning-helps-neural-networks-compute-20240321/">Quanta CoT compute article</a>
+    </div>
+  </div>
+
+
+  <div class="link-group">
+    <h3>Additional venue / mirror links named in source notes</h3>
+    <div class="link-grid">
+      <a href="https://arxiv.org/abs/2310.05657v1">Chiang &amp; Lee arXiv v1 (9 Oct 2023)</a>
+      <a href="https://arxiv.org/pdf/2310.05657.pdf">Chiang &amp; Lee pdf alias</a>
+      <a href="https://arxiv.org/abs/2303.16634v3">G-Eval arXiv v3</a>
+      <a href="https://arxiv.org/abs/2306.05685v4">MT-Bench arXiv v4</a>
+      <a href="https://arxiv.org/abs/2310.08491v2">Prometheus arXiv v2</a>
+      <a href="https://arxiv.org/abs/2609.13824v1">Tiwari arXiv v1</a>
+      <a href="https://arxiv.org/abs/2410.12858v1">Shakur arXiv (11 Oct 2024 lineage)</a>
+      <a href="https://arxiv.org/abs/2501.13957v2">Geathers arXiv v2 (15 May 2025)</a>
+      <a href="https://arxiv.org/html/2501.13957v2">Geathers html v2 (explicit in clinical note)</a>
+      <a href="https://arxiv.org/html/2410.12858">Shakur html (explicit bookmark list)</a>
+    </div>
+  </div>
+
+  <div class="link-group">
+    <h3>Conversation source</h3>
+    <div class="link-grid">
+      <a href="https://grok.com/share/bGVnYWN5LWNvcHk_e6aa03ca-eee0-45a9-b96d-7d80ea172fec">Grok share — origin conversation</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 11. METHOD -->
+<section id="method">
+  <h2>11. Method footer</h2>
+  <div class="footer">
+    <p><strong>Verification date:</strong> Saturday 19 September 2026 (America/Chicago / CT).</p>
+    <p><strong>Allowed fact sources (read in full for this briefing):</strong>
+      <code>conversation.md</code>, <code>topics.md</code>, <code>01-judge-papers.md</code>, <code>02-clinical-scoring.md</code>, <code>03-cot-mechanisms.md</code>
+      under <code>/workspace/grok-share-research/</code>.</p>
+    <p><strong>Upstream method (from source notes):</strong> arXiv Atom API metadata + local PDF text extraction (<code>pdftotext</code>) for judge papers 1–5 and 7; OpenReview primary PDF fetch failed (Cloudflare 403); clinical numbers checked against arXiv PDF/HTML or publisher abstracts. No invented κ/α/accuracy figures. No lorem/TODO.</p>
+    <p><strong>Local artifacts:</strong> PDFs in <code>pdfs/</code>; extracted text <code>pdfs/*.txt</code>; this HTML is standalone (no CDN JS; Google Fonts only).</p>
+    <p><strong>Companion:</strong> <code>REPORT-CHECK.md</code> lists wanted-but-missing facts deliberately left out of this HTML.</p>
+    <p><strong>Framing reminder:</strong> Share title “LLMs Gain Accuracy from Extended Context” is misleading. Live claim = score format / defensible scores.</p>
+  </div>
+</section>
+
+</div>
+</body>
+</html>

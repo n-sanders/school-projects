@@ -1,6 +1,19 @@
 {
   "reports": [
     {
+      "title": "Defensible Scores: Bare Ratings vs Evidence-Then-Score",
+      "date": "2026-09-19",
+      "path": "reports/2026-09-19-defensible-scores.html",
+      "summary": "Deep research from a Grok share: score-only LLM judgments are a weak protocol. Chiang & Lee (2023) is the best cite; OSCE papers support structured extract\u2192rationale\u2192score with caveats; consistency is not validity.",
+      "tags": [
+        "llm-as-judge",
+        "scoring",
+        "osce",
+        "psychometrics",
+        "defensible-scores"
+      ]
+    },
+    {
       "title": "How to Publish Research Assistant Reports",
       "date": "2026-09-04",
       "path": "reports/2026-09-04-how-to-publish-research-reports.html",
